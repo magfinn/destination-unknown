@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #31708E;
+    --secondary-color: #5085A5;
+    --tertiary-color: #8FC1E3;
+    --white-color: #F7F9FB;
+    --green-color: #687864;
+  }
+
+
+body {
+    background-color: var(--primary-color) ;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rt-bg {
+    background-image: url("../images/rt-05.jpg");
+    background-size: cover;
+    background-position: bottom;
+    border-radius: 30px;
+    width: 350px;
+    height: 200px;
+}
+header h1 {
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--primary-color);    
+}
+.big-letter {
+    font-size: 75px;
+}
+
+header nav {
+    margin: 0 0;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0 0;
+}
+
+header nav ul li a {
+    padding: 15px;
+    color: var(--tertiary-color);
+    font-weight: lighter;
+    font-size: 1.75vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    background-color: var(--tertiary-color);
+    color: var(--white-color);
+    border: solid 3px var(--primary-color);
+    border-radius: 30px;
+    font-size: 2.5vw;
+
+}
+
+.jumbotron {
+    background-image: url("../images/rt-02.jpg");
+    background-size: cover;
+    background-position: 0 -480px;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 450px;
+}
+
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    /* placeholder style - to be removed */
+    border: solid 3px var(--tertiary-color);
+    height: 300px;
+}
+
+/* placeholder style - to be removed */
+.container1,
+#tripadvisor,
+#food,
+.container2,
+footer {
+    border: solid 3px var(--tertiary-color);
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}

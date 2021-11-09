@@ -10,19 +10,35 @@
 
    <body>
        <header>
-           <nav>
-               <h1>RoadTrip</h1>
-               <a href="#map">Map</a>
-               <a href="#weather">Weather</a>
-               <a href="#tripadvisor">Things to Do</a>
-               <a href="#food">Food & Drink</a>
-               <a href="#budget">Budget</a>
-               <a href="spotify">Playlist</a>
-           </nav>
+           <div class="rt-bg">
+                <h1><span class="big-letter">R</span>oad<br><span class="big-letter">T</span>rip</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                            <a href="#map">Map</a>
+                    </li>
+                    <li>
+                            <a href="#weather">Weather</a>
+                        </li>
+                        <li>
+                            <a href="#tripadvisor">Things to Do</a>
+                        </li>
+                        <li>
+                            <a href="#food">Food & Drink</a>
+                        </li>
+                        <li>
+                            <a href="#budget">Budget</a>
+                        </li>
+                        <li>
+                            <a href="#spotify">Playlist</a>
+                        </li>
+                    </ul>
+            </nav>
        </header>
+
        <!-- Jumbotron - photo of a vacation somewhere -->
-       <div id="jumbotron">
-           <img src="#" alt="vacation">
+       <div class="jumbotron">
            <!-- Where do you want to go modal -->
            <button class="trigger">Click here to trigger the modal!</button>
            <div class="modal">
@@ -31,25 +47,33 @@
                    <h1>Hello, I am a modal!</h1>
                </div>
            </div>
+        </div>
 
-       <!-- Google maps - Santiago -->
-       <div id="maps"></div>
+        <div class="container1">
+            <!-- Google maps - Santiago -->
+            <div id="maps">map placeholder</div>
 
-       <!-- Weather - Khanh -->
-       <div id="weather"></div>
+            <!-- Weather - Khanh -->
+            <div id="weather">weather placeholder</div>
+
+        </div>
 
        <!--Tripadvisor - Maggie  -->
-       <div id="tripadvisor"></div>
+       <div id="tripadvisor">tripadvisor placeholder</div>
 
        <!-- Food & Drink - Santiago -->
-       <div id="food"></div>
+       <div id="food">food placeholder</div>
 
-       <!-- Budget with modal - Khanh -->
-       <div id="budget"></div>
+       <div class="container2">
+            <!-- Budget with modal - Khanh -->
+            <div id="budget">budget placeholder</div>
 
-       <!-- Spotify playlist - Ana -->
-       <div id="spotify"></div>
+            <!-- Spotify playlist - Ana -->
+            <div id="spotify">spotify placeholder</div>
+        </div>
    <footer>
+        <h2>❤️ Made with love by Team Nine</h2>
+       
    </footer>
 
 <!-- Jquery files -->
