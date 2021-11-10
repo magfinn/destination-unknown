@@ -66,7 +66,6 @@ header nav ul li a:hover {
     border: solid 3px var(--primary-color);
     border-radius: 30px;
     font-size: 2.5vw;
-
 }
 
 .jumbotron {
@@ -92,7 +91,7 @@ header nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
+    
     /* placeholder style - to be removed */
     border: solid 3px var(--tertiary-color);
     height: 300px;
