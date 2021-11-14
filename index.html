@@ -71,13 +71,54 @@
         </div>
    <footer>
         <h2>❤️ Made with love by Team Nine</h2>
-       
    </footer>
 
-<!-- Jquery files -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<!-- Local js -->
-<script src="./assets/js/script.js"></script>
+   <!-- Budget Modal -->
+   <div class="modal-budget">
+       <div class="modal-budget-dialog">
+           <div class="modal-budget-content">
+
+               <div class="modal-budget-header">
+                   <h5 class="modal-budget-title">Calculate Your Budget</h5>
+                   <button class="modal-budget-closeModal" type="button" data-dismiss="modal-budget" aria-label="close">
+                       <span aria-hidden="true">&times;</span>
+                   </button>
+               </div>
+               <div class="modal-budget-body">
+                   <form>
+                       <div class="modal-budget-form">
+                            <label for="modal-budget-NumberOfTraveler">Number of Traveler/s:</label>
+                            <input id="modal-budget-NumberOfTraveler" type="number" placeholder="2">
+                        </div>
+                       <div class="modal-budget-form">
+                            <label for="modal-budget-eachTraveler">Estimated Cost Per Traveler:</label>
+                            <input id="modal-budget-eachTraveler" type="number" placeholder="888">
+                        </div>
+                       <div class="modalForm">
+                            <label for="modal-budget-unexpectedCost">Allowed Unexpected Costs:</label>
+                            <input id="modal-budget-unexpectedCost" type="number" placeholder="200">
+                        </div>
+                       <div class="modalForm">
+                            <label for="modal-budget-departureDate"></label>
+                            <input id="modal-budget-departureDate" type="text" placeholder="mm/dd/yyyy">
+                        </div>
+                   </form>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="modal-budget-closeBtn" data-dismiss="modal-budget">Close</button>
+                   <button type="button" class="modal-budget-saveBtn">Save</button>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+
+
+    <!-- Jquery files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Local js -->
+    <script src="./assets/js/script.js"></script>
 </body>
 
