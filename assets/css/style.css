@@ -20,7 +20,7 @@ header {
     align-items: center;
     margin-bottom: 15px;
 }
-
+/* H1 styles start */
 .rt-bg {
     flex: 30%;
     background-image: url("../images/rt-05.jpg");
@@ -46,7 +46,9 @@ header h1 {
 .big-letter {
     font-size: 75px;
 }
+/* H1 styles end */
 
+/* navigation styles start */
 header nav {
     flex: 70%;
     margin: 0 0;
@@ -88,7 +90,9 @@ header nav ul li {
 header nav ul li:hover {
     transform: rotate(360deg);
 }
+/* navigation styles end */
 
+/* jumbotron styles start */
 .jumbotron {
     background-image: url("../images/rt-01.jpg");
     background-size: cover;
@@ -99,6 +103,9 @@ header nav ul li:hover {
     align-items: center;
     height: 25vw;
 }
+/* jumbotron styles end */
+
+/* body divs styles start */
 
 .container1 {
     display: flex;
@@ -129,6 +136,7 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+/* body divs styles end */
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 1010px) {
