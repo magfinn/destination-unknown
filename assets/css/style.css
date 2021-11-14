@@ -22,24 +22,29 @@ header {
 }
 
 .rt-bg {
+    flex: 30%;
     background-image: url("../images/rt-05.jpg");
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
+    background-position: 80%;
     border-radius: 30px;
-    width: 350px;
     height: 200px;
 }
 header h1 {
     font-weight: bold;
     font-size: 50px;
     color: var(--primary-color);    
+    margin-left: 20px;
+    margin-top: 20px;
 }
 .big-letter {
     font-size: 75px;
 }
 
 header nav {
+    flex: 70%;
     margin: 0 0;
+    align-items: center;
 }
 
 header nav ul {
@@ -69,15 +74,15 @@ header nav ul li a:hover {
 }
 
 .jumbotron {
-    background-image: url("../images/rt-02.jpg");
+    background-image: url("../images/rt-01.jpg");
     background-size: cover;
-    background-position: 0 -480px;
-    background-attachment: fixed;
+    background-position: bottom;
+    
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 450px;
+    height: 25vw;
 }
 
 
@@ -109,4 +114,38 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 1010px) {
+   .rt-bg {
+        flex: 100%;
+        background-image: none;
+        height: 100px;
+    }
+    header div h1 br {
+        display: none;
+    }
+    .rt-bg h1 {
+        color: white;
+        text-align: center;
+        font-size: 55px;
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    header nav {
+        flex: 100%;
+        align-items: center;
+        margin: 0 35px;
+    }
+
+    header nav ul li a {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .jumbotron {
+        background-image: url("../images/rt-02.jpg");
+        background-size: cover;
+        background-position: 0 -350px;
+    }
 }
