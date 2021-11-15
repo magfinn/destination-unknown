@@ -236,15 +236,29 @@ var modalBudget = $("#modal-budget");
 //get modal button that opens the modal
 var modalBudgetBtn = $(".budget-calculateBtn");
 //get the button that closes the modal
-var modalFormCloseBtn= $(".modal-budget-closeModal");
+var modalFormCloseX= $(".modal-budget-closeModal");
+//get modal close btn 
+var modalCloseBtn=$(".modal-budget-closeBtn");
+//get modal save btn 
+var modalSaveBtn=$(".modal-budget-saveBtn");
 
-//when the user clicks the button, open the modal
-// modalBudgetBtn.on("click", function() {
-//     modalBudget.removeClass("modal-budget-hidden").addClasss("modal-budget-shown");
-// });
+
+//when the user clicks the budget calculator button, open the modal
 modalBudgetBtn.on("click", function() {
     modalBudget.removeClass("modal-budget-hidden");
     modalBudget.addClass("modal-budget-shown");
 });
 
+//when the user clicks the span X button, close the modal
+modalFormCloseX.on("click", function() {
+    modalBudget.removeClass("modal-budget-shown");
+    modalBudget.addClass("modal-budget-hidden");
+})
+//when the user clicks the close button in modal form, close the modal
+modalCloseBtn.on("click", function() {
+    modalBudget.removeClass("modal-budget-shown");
+    modalBudget.addClass("modal-budget-hidden");
+})
+
+//get data when user clicks the save button in the modal form, then close the modal
 
