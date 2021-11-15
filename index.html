@@ -4,6 +4,8 @@
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
    <link rel="stylesheet" href="./assets/css/style.css" />
    <title>RoadTrip</title>
    </head>
@@ -37,47 +39,117 @@
             </nav>
        </header>
 
-       <!-- Jumbotron - photo of a vacation somewhere -->
-       <div class="jumbotron">
-           <!-- Where do you want to go modal -->
-           <button class="trigger">Click here to trigger the modal!</button>
-           <div class="modal">
-               <div class="modal-content">
-                   <span class="close-button">&times;</span>
-                   <h1>Hello, I am a modal!</h1>
-               </div>
-           </div>
+            <!-- Jumbotron - photo of a vacation somewhere -->
+            <div class="jumbotron">
+                <!-- Where do you want to go modal -->
+                <button class="trigger">Click here to trigger the modal!</button>
+                <div class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h1>Hello, I am a modal!</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container1">
+                <!-- Google maps - Santiago -->
+                <div id="maps">
+                    <h4>Maps</h4>
+                    <div> Placeholder</div>
+                </div>
+                <!-- Weather - Khanh -->
+                <div id="weather">
+                    <h4>Destination's Current Weather</h4>
+                    <span>For the next 5 days weather forecast, please <a href="">visit our weather dashboard.</a></span>
+                    <div class="current-weather"> Current Weather Placeholder</div>
+                </div>
+            </div>
+
+            <!--Tripadvisor - Maggie  -->
+            <div id="tripadvisor">
+                <h4>Tripadvisor</h4>
+                <div>Placeholder
+
+                </div>
+            </div>
+
+            <!-- Food & Drink - Santiago -->
+            <div id="food">
+                <h4>Food & Drink</h4>
+                <div>
+                    Placeholder
+                </div>
+            </div>
+
+            <div class="container2">
+                    <!-- Budget with modal - Khanh -->
+                    <div id="budget">
+                        <h4>Plan Your Budget</h4>
+                        <div class="budget-callMessage">
+                            <p>Want to plan your easy budget - click below button and fill out a short form</p>
+                        </div>
+                        <div class="budget-calculate">
+                            <button class="budget-calculateBtn" typle="buton">Budget Calculator</button>
+                        </div>
+                        <div class="budget-calculatorDatails">
+                        </div>      
+                    </div>
+                    <!-- Spotify playlist - Ana -->
+                    <div id="spotify">
+                        <h4>Spotify</h4>
+                        <div>placeholder</div>
+                    </div>
+                </div>
+            <footer>
+                    <h2>❤️ Made with love by Team Nine</h2>
+            </footer>
         </div>
 
-        <div class="container1">
-            <!-- Google maps - Santiago -->
-            <div id="maps">map placeholder</div>
-            <!-- Weather - Khanh -->
-            <div id="weather">weather placeholder</div>
+    <!-- Budget Modal -->
+    <div id="modal-budget" class="modal-budget-hidden">
+            <div class="modal-budget-dialog">
+                <div class="modal-budget-content">
 
-        </div>
-
-       <!--Tripadvisor - Maggie  -->
-       <div id="tripadvisor">tripadvisor placeholder</div>
-
-       <!-- Food & Drink - Santiago -->
-       <div id="food">food placeholder</div>
-
-       <div class="container2">
-            <!-- Budget with modal - Khanh -->
-            <div id="budget">budget placeholder</div>
-            <!-- Spotify playlist - Ana -->
-            <div id="spotify">spotify placeholder</div>
-        </div>
-   <footer>
-        <h2>❤️ Made with love by Team Nine</h2>
-       
-   </footer>
-
-<!-- Jquery files -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<!-- Local js -->
-<script src="./assets/js/script.js"></script>
+                    <div class="modal-budget-header">
+                        <button class="modal-budget-closeModal" type="button">
+                            <span>&times;</span>
+                        </button>
+                        <h5 class="modal-budget-title">Calculate Your Budget</h5>
+                    </div>
+                    <div class="modal-budget-body">
+                        <form>
+                            <div class="modal-budget-form">
+                                    <label for="modal-budget-NumberOfTraveler">Number of Traveler/s:</label>
+                                    <input class="modal-budget-NumberOfTraveler" type="number" placeholder="2">
+                                </div>
+                            <div class="modal-budget-form">
+                                    <label for="modal-budget-eachTraveler">Estimated Cost Per Traveler:</label>
+                                    <input class="modal-budget-eachTraveler" type="number" placeholder="888">
+                                </div>
+                            <div class="modal-budget-form">
+                                    <label for="modal-budget-unexpectedCost">Allowable Unexpected Costs:</label>
+                                    <input class="modal-budget-unexpectedCost" type="number" placeholder="200">
+                                </div>
+                            <div class="modal-budget-form">
+                                    <label for="modal-budget-departureDate">Departure Date:</label>
+                                    <input class="modal-budget-departureDate" type="text" placeholder="mm/dd/yyyy">
+                                </div>
+                        </form>
+                    </div>
+                    <div class="modal-budget-footer">
+                        <button type="button" class="modal-budget-closeBtn">Close</button>
+                        <button type="button" class="modal-budget-saveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+    </div> 
+    <!-- Jquery files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Local js -->
+    <script src="./assets/js/script.js"></script>
 </body>
 
