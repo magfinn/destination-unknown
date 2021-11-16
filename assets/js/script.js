@@ -1,3 +1,4 @@
+// BUDGET SECTION STARTS
 // trigger budget modal
 // get modal form 
 var modalBudget = $("#modal-budget");
@@ -89,3 +90,89 @@ modalSaveBtn.on("click",function() {
     modalBudget.removeClass("modal-budget-shown");
     modalBudget.addClass("modal-budget-hidden");
 })
+// BUDGET SECTION ENDS
+
+// JUMBOTRON form input to get city name - START
+
+// set up variables:
+var searchBtn = $(".city-searchBtn");
+var cityInputName = $(".where-to");
+var todayWeather = $(".current-weather");
+
+// current day variable
+currentDay = moment().format("MM[/]DD[/]YYYY");
+
+// variable for API keys
+var apiKey = "818c59d7f810b3a544e5b96a076c8332";
+
+// track the search count for local storage
+var searchCount = 0;
+
+//search button click event
+searchBtn.on("click", function(event) {
+    // prevent page from refreshing
+    event.preventDefault();
+
+    // get value of the input city name
+    var cityName = cityInputName.val().trim();
+    console.log(cityName);
+
+    // make sure user input a city name, cannot be empty
+    if (cityName) {
+        getWeatherData(cityName);
+        //clear old content
+        cityInputName.val('');
+    } else {
+        return;
+    }
+});
+// get weather data from city name passed in from click event:
+var getWeatherData = function (city) {
+
+    // format the openweathermap api url for current weather:
+    currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=imperial";
+    //console.log(currentUrl);
+
+    // clear old data
+    todayWeather.empty();
+
+    //make a get request to url for current weather:
+    fetch(currentUrl).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(data){
+                displayCurrentWeather (data);               
+            });
+        } else {
+            return;
+        }
+        })
+    };
+    var displayCurrentWeather = function(data) {         
+        // set local storage
+        // var searchStorage = localStorage.setItem(searchCount, data.name);
+        localStorage.setItem(searchCount, JSON.stringify(data.name));
+        searchCount = searchCount +1;
+                
+        //Append h2 city name with id to the main display container: 
+        todayWeather.append("<h2 class='city-name'>" + data.name + " (" + currentDay + ")</h2>" + "<img src='https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png'>");
+        todayWeather.append("<p class='displayMain'>Temp: " + data.main.temp + " °F");
+        todayWeather.append("<p class='displayMain'>Wind: " + data.wind.speed + " MPH");
+        todayWeather.append("<p class='displayMain'>Humidity: " + data.main.humidity + " %");
+        
+        //UV index has different api call:
+        var uvIndexUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=" + apiKey;
+        //console.log(uvIndexUrl);
+        fetch(uvIndexUrl).then(function(response){
+            response.json().then(function(uvData){
+               //console.log(uvData.current.uvi);
+                if (uvData.current.uvi < 3) {
+                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge badge-success'>" + uvData.current.uvi + "</span>");
+                }
+                else if (uvData.current.uvi >= 3 && uvData.current.uvi < 6) {
+                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge badge-warning'>" + uvData.current.uvi + "</span>");
+                } else if (uvData.current.uvi > 6) {
+                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge badge-danger'>" + uvData.current.uvi + "</span>");
+                };          
+            }
+        )});           
+    };

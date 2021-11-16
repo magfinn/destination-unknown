@@ -8,8 +8,9 @@
 
 
 body {
-    background-color: var(--primary-color) ;
+    background-color: var(--white-color) ;
     font-family: Helvetica, Arial, sans-serif;
+    
 }
 
 header {
@@ -112,6 +113,38 @@ header nav ul li:hover {
     border-radius: 30px;
     margin-bottom: 25px;
 }
+.jumbotron form {
+    background-color: white;
+    border-radius: 40px;
+}
+.where-to {
+    flex: 40%;
+    width: 40vw;
+    height: 4vw;
+    border-radius: 40px;
+    font-size: 3vw;
+    padding-left: 20px;
+    border:none;
+    margin-bottom: 20px;
+}
+.where-to::placeholder {
+    font-size: 3vw;
+    padding-left: 10px;
+    
+}
+.city-searchBtn {
+    height: 4vw;
+    border-radius: 40px;
+    padding-left: 40px;
+    border:none;
+    background-color: white;
+    margin-top: 20px;
+}
+.city-searchBtn img {
+    height: 2vw;
+    width: 2vw;
+    cursor: pointer;
+}
 /* jumbotron styles end */
 
 /* MAPS styles start */
@@ -157,7 +190,7 @@ header nav ul li:hover {
     flex: 50%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 30px;
 }
 #weather h4 {
@@ -179,6 +212,27 @@ header nav ul li:hover {
     -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
     box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
+}
+#weather span {
+    margin: 15px 0;
+}
+.current-weather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.city-name {
+    font-weight: bold;
+}
+.displayMain {
+    font-size: 25px;
+}
+.city-name,
+.displayMain {
+    flex:100%;
+    margin:0;
+    padding:0;
 }
 /* WEATHER styles END */
 
@@ -215,6 +269,7 @@ header nav ul li:hover {
     box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
 }
+
 /* Tripadviser styles END */
 
 /* Food & Drink start */
@@ -496,7 +551,7 @@ header nav ul li:hover {
     footer {
         text-align: center;
         padding: 15px;
-        color: var(--tertiary-color);
+        color: var(--primary-color);
         font-weight: bold;
         font-size: 1vw;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
