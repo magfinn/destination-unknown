@@ -6,43 +6,43 @@ var cityInput = $('#city-input');
 var cityName = '';
 var events = {};
 
-//TODO: create a working function to display 10 events in a table
-var displayEvents = function(events) {
+//TODO: create a working function to display 10 events
+var displayEvents = function(data) {
     //create elements that make up an event item
-    var eventTbl = $('<tr>').addClass ("list-group-item");
-    var name = $('<th>').text(eventName);
-    var date = $('<th>').text(eventDate);
-    var url = $('<th>').text(eventURL);
+    var events = data._embedded.events;
 
+    events.forEach(event => {
+        console.log(event.name);
+        console.log(event.url);
+        console.log(event.dates.start.localDate);
+        
+    });
 };
 
 
-var saveEvents = function() {
-    localStorage.setItem("events", JSON.stringify(events));
-};
 
-
-
-var getEvents = function(data) {
+var getEvents = function() {
     var city = localStorage.getItem('cityName');
-    console.log('city: ', JSON.parse(city));
+    console.log('city: ', cityName);
     
     fetch(tmRootURL + cityName +'&page=1&size=10&apikey=' + APIKey)
 
     .then(response =>
         response.json())
-    .then(data =>
-        console.log(data));
-        displayEvents(data)
+    .then(data => {
+        console.log(data);
+        displayEvents(data);
+    });
 };
 
 
 searchBtn.on('click', function(event) {
+    console.log("click");
     event.preventDefault(); 
     var cityName = cityInput.val().trim();
     localStorage.setItem('city', JSON.stringify(cityName));
     if(cityName) {
-        getEvents(cityName);
+        getEvents();
         console.log(cityName);
         } else {
             return
