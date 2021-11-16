@@ -122,13 +122,13 @@ header nav ul li:hover {
     width: 40vw;
     height: 4vw;
     border-radius: 40px;
-    font-size: 25px;
+    font-size: 3vw;
     padding-left: 20px;
     border:none;
     margin-bottom: 20px;
 }
 .where-to::placeholder {
-    font-size: 25px;
+    font-size: 3vw;
     padding-left: 10px;
     
 }
@@ -143,6 +143,7 @@ header nav ul li:hover {
 .city-searchBtn img {
     height: 2vw;
     width: 2vw;
+    cursor: pointer;
 }
 /* jumbotron styles end */
 
@@ -189,7 +190,7 @@ header nav ul li:hover {
     flex: 50%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 30px;
 }
 #weather h4 {
@@ -211,6 +212,27 @@ header nav ul li:hover {
     -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
     box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
+}
+#weather span {
+    margin: 15px 0;
+}
+.current-weather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.city-name {
+    font-weight: bold;
+}
+.displayMain {
+    font-size: 25px;
+}
+.city-name,
+.displayMain {
+    flex:100%;
+    margin:0;
+    padding:0;
 }
 /* WEATHER styles END */
 
@@ -247,6 +269,7 @@ header nav ul li:hover {
     box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
 }
+
 /* Tripadviser styles END */
 
 /* Food & Drink start */
