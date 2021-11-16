@@ -8,45 +8,65 @@
 
 
 body {
-    background-color: var(--primary-color) ;
+    background-color: var(--white-color) ;
     font-family: Helvetica, Arial, sans-serif;
+    
 }
 
 header {
     background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    background-color: var(--tertiary-color);
+    background-image: linear-gradient(45deg, var(--green-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%);
+    border-radius: 30px;
+    
 }
-
+/* H1 styles start */
 .rt-bg {
+    flex: 30%;
     background-image: url("../images/rt-05.jpg");
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
+    background-position: 80%;
     border-radius: 30px;
-    width: 350px;
     height: 200px;
+    transition: transform .7s ease-in-out;
 }
+.rt-bg:hover {
+    transform: rotate(360deg);
+  }
+
 header h1 {
     font-weight: bold;
     font-size: 50px;
     color: var(--primary-color);    
+    margin-left: 20px;
+    margin-top: 20px;
 }
+
 .big-letter {
     font-size: 75px;
 }
+/* H1 styles end */
 
+/* navigation styles start */
 header nav {
+    flex: 70%;
     margin: 0 0;
-}
+    justify-content: center;
+    align-items: center;
+   }
 
 header nav ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     list-style: none;
     padding: 0 0;
 }
@@ -54,59 +74,526 @@ header nav ul {
 header nav ul li a {
     padding: 15px;
     color: var(--tertiary-color);
-    font-weight: lighter;
+    font-weight: bold;
     font-size: 1.75vw;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-decoration: none;
 }
 
 header nav ul li a:hover {
-    background-color: var(--tertiary-color);
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, 
+    #2BD2FF 52%, #2BFF88 90%);
+    transition: all .4s ease-in-out;
+    /*background-color: var(--tertiary-color);*/
     color: var(--white-color);
     border: solid 3px var(--primary-color);
     border-radius: 30px;
     font-size: 2.5vw;
 }
 
+header nav ul li {
+    transition: transform .5s ease-in-out;
+}
+header nav ul li:hover {
+    transform: rotate(360deg);
+}
+/* navigation styles end */
+
+/* jumbotron styles start */
 .jumbotron {
-    background-image: url("../images/rt-02.jpg");
+    background-image: url("../images/rt-01.jpg");
     background-size: cover;
-    background-position: 0 -480px;
-    background-attachment: fixed;
+    background-position: bottom;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 450px;
+    height: 25vw;
+    border-radius: 30px;
+    margin-bottom: 25px;
 }
+.jumbotron form {
+    background-color: white;
+    border-radius: 40px;
+}
+.where-to {
+    flex: 40%;
+    width: 40vw;
+    height: 4vw;
+    border-radius: 40px;
+    font-size: 3vw;
+    padding-left: 20px;
+    border:none;
+    margin-bottom: 20px;
+}
+.where-to::placeholder {
+    font-size: 3vw;
+    padding-left: 10px;
+    
+}
+.city-searchBtn {
+    height: 4vw;
+    border-radius: 40px;
+    padding-left: 40px;
+    border:none;
+    background-color: white;
+    margin-top: 20px;
+}
+.city-searchBtn img {
+    height: 2vw;
+    width: 2vw;
+    cursor: pointer;
+}
+/* jumbotron styles end */
 
-
-.container1 {
+/* MAPS styles start */
+#maps{
+    flex: 100%;
+    background-color: var(--tertiary-color);
+    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%);
+    flex: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-radius: 30px;
+}
+#maps h4 {
+    flex: 100%;
+    margin: 0 0 15px 0;
+}
+#maps h4 {
+    color: var(--tertiary-color);
+    border: solid 3px var(--primary-color);
+    border-radius: 30px;
+    font-size: 2.5vw;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 0;
+    height: 4vw;
+}
+#maps h4:hover{
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
+    transition: all 500ms ease;
+}
+/* MAPS styles END */
+
+/* WEATHER styles start */
+#weather{
+    flex: 100%;
+    background-color: var(--tertiary-color);
+    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%);
+    flex: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 30px;
+}
+#weather h4 {
+    flex: 100%;
+    margin: 0 0 15px 0;
+}
+#weather h4 {
+    color: var(--tertiary-color);
+    border: solid 3px var(--primary-color);
+    border-radius: 30px;
+    font-size: 2.5vw;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 0;
+    height: 4vw;
+}
+#weather h4:hover{
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
+    transition: all 500ms ease;
+}
+#weather span {
+    margin: 15px 0;
+}
+.current-weather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.city-name {
+    font-weight: bold;
+}
+.displayMain {
+    font-size: 25px;
+}
+.city-name,
+.displayMain {
+    flex:100%;
+    margin:0;
+    padding:0;
+}
+/* WEATHER styles END */
+
+/* Tripadvisorstyles start */
+#tripadvisor{
+    flex: 100%;
+    background-color: var(--tertiary-color);
+    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%);
+    flex: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 30px;
+    margin-bottom: 25px;
+}
+#tripadvisor h4 {
+    flex: 100%;
+    margin: 0 0 15px 0;
+}
+#tripadvisor h4 {
+    color: var(--tertiary-color);
+    border: solid 3px var(--primary-color);
+    border-radius: 30px;
+    font-size: 2.5vw;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 0;
+    height: 4vw;
+}
+#tripadvisor h4:hover{
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
+    transition: all 500ms ease;
 }
 
+/* Tripadviser styles END */
+
+/* Food & Drink start */
+#food{
+    flex: 100%;
+    background-color: var(--tertiary-color);
+    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%);
+    flex: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 30px;
+    margin-bottom: 25px;
+}
+#food h4 {
+    flex: 100%;
+    margin: 0 0 15px 0;
+}
+#food h4 {
+    color: var(--tertiary-color);
+    border: solid 3px var(--primary-color);
+    border-radius: 30px;
+    font-size: 2.5vw;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 0;
+    height: 4vw;
+}
+#food h4:hover{
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
+    transition: all 500ms ease;
+}
+/* Food & Drink styles END */
+
+/* body divs styles start */
+
+.container1,
 .container2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
-    /* placeholder style - to be removed */
-    border: solid 3px var(--tertiary-color);
-    height: 300px;
+    margin-bottom: 25px;
 }
 
-/* placeholder style - to be removed */
-.container1,
-#tripadvisor,
-#food,
-.container2,
-footer {
-    border: solid 3px var(--tertiary-color);
-    height: 300px;
+/* body divs styles end */
+
+/* Budget-modal Styles start */
+#budget {
+    background-color: var(--tertiary-color);
+    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%);
+    flex:50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    border-radius: 30px;
+}
+#budget h4,
+.budget-callMessage,
+.budget-calculate,
+.budget-calculateDetails {
+    flex: 100%;
+    margin: 0 0 15px 0;
+}
+#budget h4 {
+    color: var(--tertiary-color);
+    border: solid 3px var(--primary-color);
+    border-radius: 30px;
+    font-size: 2.5vw;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 0;
+    height: 4vw;
+}
+#budget h4:hover {
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
+    transition: all 500ms ease;
+}
+.budget-callMessage p {
+    color: var(--white-color);
+    font-size: 25px;
+    text-align: center;
+    margin: 10px 0 5px 0;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.budget-calculatorDatails p,
+.budget-calculatorDatails ul, 
+.budget-calculatorDatails li {
+    color: var(--white-color);
+    font-size: 20px;
+    text-align: left;
+    margin: 10px 0 5px 0;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.budget-calculatorDatails ul {
+    margin-bottom: 20px;
+}
+.boldText {
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.budget-calculate {
+    text-align: center;
+}
+.budget-calculateBtn {
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: var(--white-color);
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%);
+    padding: 10px;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
+    transition: all .5s ease-out;
+    background-size: 1px 100px;
+    background-position: 0 -10px;
+}
+.budget-calculateBtn:hover {
+    background-position: 1px -50px;
+}
+.modal-budget-hidden {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 10vw;
+    padding-left: 35vw;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(126, 65, 65, 0.75); 
+}
+.modal-budget-shown {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 10vw;
+    padding-left: 35vw;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.75);
+}
+
+.modal-budget-content {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%,
+     #2BD2FF 52%, #2BFF88 90%);
+    opacity: 0.7;
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+}
+.modal-budget-header,
+.model-budget-body,
+.modal-budget-footer {
+    flex:100%;
+    margin: 5px 0;
+}
+
+.modal-budget-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 35px;
+
+}
+.modal-budget-closeModal,
+.modal-budget-title {
+    flex:100%;
+}
+.modal-budget-closeModal {
+    text-align: right;
+    background-color: transparent;
+    border:none;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    padding-right: 10px;
+}
+.modal-budget-closeModal:hover {
+    font-size:50px;
+}
+.modal-budget-title {
+    margin: 0 0 10px 0;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.modal-budget-body form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.modal-budget-form {
+    flex: 100%;
+    width: 70%;
+    margin: 7px 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.modal-budget-form label{
+    flex: 100%;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.modal-budget-form input {
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+}
+.modal-budget-footer {
+    text-align: center;
+    margin: 20px 0 15px 0;
+}
+.modal-budget-closeBtn,
+.modal-budget-saveBtn {
+    padding: 10px;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
+    
+}
+.modal-budget-closeBtn {
+    background-color: #FA8BFF;
+}
+.modal-budget-saveBtn {
+    background-color: #2BFF88;
+}
+/* Budget-modal Styles start */
+
+/* Spotify styles start */
+#spotify {
+    background-color: var(--tertiary-color);
+    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%);
+    flex: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 30px;
+    width:90%;
+}
+#spotify h4 {
+    flex: 100%;
+    margin: 0 0 15px 0;
+}
+#spotify h4 {
+    color: var(--tertiary-color);
+    border: solid 3px var(--primary-color);
+    border-radius: 30px;
+    font-size: 2.5vw;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 0;
+    height: 4vw;
+}
+#spotify h4:hover {
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
+    transition: all 500ms ease;
+}
+/* Spotify styles END */
+
+/* Footer Start */
+    footer {
+        text-align: center;
+        padding: 15px;
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 1vw;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 1010px) {
+   .rt-bg {
+        flex: 100%;
+        background-image: none;
+        height: 100px;
+        transition: all .5s ease-out;
+    }
+   
+    header div h1 br {
+        display: none;
+    }
+    .rt-bg h1 {
+        color: white;
+        text-align: center;
+        font-size: 55px;
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    header nav {
+        flex: 100%;
+        align-items: center;
+        margin: 0 35px;
+    }
+
+    header nav ul li a {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    header nav ul li a:hover {
+        font-size: 30px;
+    }
+
+    .jumbotron {
+        background-image: url("../images/rt-02.jpg");
+        background-size: cover;
+        background-position: 0 -350px;
+        transition: all .5s ease-out;
+    }
 }
