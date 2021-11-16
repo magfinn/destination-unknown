@@ -8,8 +8,9 @@
 
 
 body {
-    background-color: var(--primary-color) ;
+    background-color: var(--white-color) ;
     font-family: Helvetica, Arial, sans-serif;
+    
 }
 
 header {
@@ -111,6 +112,37 @@ header nav ul li:hover {
     height: 25vw;
     border-radius: 30px;
     margin-bottom: 25px;
+}
+.jumbotron form {
+    background-color: white;
+    border-radius: 40px;
+}
+.where-to {
+    flex: 40%;
+    width: 40vw;
+    height: 4vw;
+    border-radius: 40px;
+    font-size: 25px;
+    padding-left: 20px;
+    border:none;
+    margin-bottom: 20px;
+}
+.where-to::placeholder {
+    font-size: 25px;
+    padding-left: 10px;
+    
+}
+.city-searchBtn {
+    height: 4vw;
+    border-radius: 40px;
+    padding-left: 40px;
+    border:none;
+    background-color: white;
+    margin-top: 20px;
+}
+.city-searchBtn img {
+    height: 2vw;
+    width: 2vw;
 }
 /* jumbotron styles end */
 
@@ -496,7 +528,7 @@ header nav ul li:hover {
     footer {
         text-align: center;
         padding: 15px;
-        color: var(--tertiary-color);
+        color: var(--primary-color);
         font-weight: bold;
         font-size: 1vw;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
