@@ -10,11 +10,15 @@
 body {
     background-color: var(--white-color) ;
     font-family: Helvetica, Arial, sans-serif;
-    color: dark
-    
+    /* color: dark; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* margin: 0 75px; */
 }
 
 header {
+    flex: 100%;
     background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
@@ -49,6 +53,7 @@ header h1 {
 header nav {
     flex: 70%;
     justify-content: space-around;
+    margin: 10px 50px;
    }
 header nav ul {
     display: flex;
@@ -84,6 +89,7 @@ header nav ul li {
 
 /* jumbotron styles start */
 .jumbotron {
+    flex: 100%;
     background-image: url("../images/rt-01.jpg");
     background-size: cover;
     background-position: bottom;
@@ -93,7 +99,7 @@ header nav ul li {
     align-items: center;
     height: 20vw;
     border-radius: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .jumbotron form {
     background-color: white;
@@ -129,14 +135,30 @@ header nav ul li {
 }
 /* jumbotron styles end */
 
-/* MAPS styles start */
-#maps{
-    width: 65%;
-    background-color: var(--secondary-color);
-    flex: 50%;
+/* body divs styles start */
+.container1,
+.container2,
+.container3,
+.container4 {
+    flex: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-radius: 30px;
+    margin: 25px 150px 25px 150px;
+}
+/* body divs styles end */
+
+/* MAPS styles start */
+#maps {
+    flex: 100%;
+    /* width: 65%; */
+    background-color: var(--secondary-color);
+    /* flex: 50%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25px;
     /* border-radius: 30px; */
 }
 #maps h4 {
@@ -159,20 +181,24 @@ header nav ul li {
     box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
 }
+.maps iframe {
+    text-align: center;
+}
 /* MAPS styles END */
 
 /* WEATHER styles start */
-#weather{
-    flex: 50%;
+#weather {
+    flex: 100%;
     width: 65%;
     background-color: var(--secondary-color);
     /* background-image: linear-gradient(45deg, var(--tertiary-color) 0%,  */
     /* var(--secondary-color) 52%, var(--green-color) 90%); */
-    flex: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 30px;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 #weather h4 {
     flex: 100%;
@@ -189,15 +215,16 @@ header nav ul li {
     height: 4vw;
 }
 #weather h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
-    box-shadow: 8px 15px 0px var(--secondary-color);
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
 }
 #weather span {
     margin: 15px 0;
 }
 .current-weather {
+    flex:100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -215,21 +242,34 @@ header nav ul li {
     margin:0;
     padding:0;
 }
+.badge-success {
+    background-color: green;
+    color: white;
+}
+.badge-warning{
+    background-color: orange;
+    color: white;
+}
+.badge-danger {
+    background-color: red;
+    color: white;
+}
 /* WEATHER styles END */
 
 /* Tripadvisorstyles start */
-#tripadvisor{
+#tripadvisor {
+    flex: 100%;
     width: 65%;
     background-color: var(--secondary-color);
     /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
     var(--secondary-color) 52%, var(--green-color) 90%); */
-    flex: 50%;
+    /* flex: 50%; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    /* border-radius: 30px; */
+    justify-content: center;
     border-radius: 30px;
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 #tripadvisor h4 {
     flex: 100%;
@@ -246,9 +286,9 @@ header nav ul li {
     height: 4vw;
 }
 #tripadvisor h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
-    box-shadow: 8px 15px 0px var(--secondary-color);
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
 }
 #tripadvisor .event-container {
@@ -259,9 +299,9 @@ header nav ul li {
    flex-wrap: wrap;
    flex-direction: row;
 }
-.event-container{
+.event-container {
     display: flex;
-    flex: wrap row;
+    flex-wrap: row;
     align-content: center;
     justify-content: space-between;
     margin:1%;
@@ -270,24 +310,6 @@ a {
     text-decoration:none;
 }
 /* Tripadviser styles END */
-
-/* body divs styles start */
-.container1 .container2 .container3 {
-    display: flex;
-    justify-content: space-around;
-    padding:5px;
-    margin-bottom: 20px;
-    width: 60%;
-}
-div {
-    margin: 5px;
-}
-.container4 {
-    display: flex;
-    justify-content: right;
-    width: 40%;
-}
-/* body divs styles end */
 
 /* Budget-modal Styles start */
 #budget {
@@ -319,9 +341,9 @@ div {
     height: 4vw;
 }
 #budget h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
-    box-shadow: 8px 15px 0px var(--secondary-color);
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
 }
 .budget-callMessage p {
@@ -484,16 +506,17 @@ div {
 
 /* Spotify styles start */
 #spotify {
+    flex: 100%;
+    width: 65%;
     background-color: var(--secondary-color);
     /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
     var(--secondary-color) 52%, var(--green-color) 90%); */
-    float: right;
-    align-content: flex-end;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 30px;
-    margin-right: 15px;
-    padding: 5px;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 #spotify h4 {
     flex: 100%;
@@ -510,21 +533,22 @@ div {
     height: 4vw;
 }
 #spotify h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
-    box-shadow: 8px 15px 0px var(--secondary-color);
+    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
+    box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
 }
 /* Spotify styles END */
 
 /* Footer Start */
     footer {
+        flex:100%;
         text-align: center;
-        padding: 15px;
         color: var(--white-color);
         background-color: var(--primary-color);
         font-size: 0.7vw;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin:0;
     }
 /* Footer Style END */
 
