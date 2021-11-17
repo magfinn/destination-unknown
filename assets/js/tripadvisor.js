@@ -9,6 +9,8 @@ var events = {};
 
 //TODO: create a working function to display 10 events
 var displayEvents = function(data) {
+    //clear old data
+    eventContainer.empty();
     //create elements that make up an event item
     var events = data._embedded.events;
     console.log(events);
