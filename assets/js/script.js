@@ -15,6 +15,7 @@ var modalNumberOfTraveler = $(".modal-budget-NumberOfTraveler");
 var modalEachTraveler= $(".modal-budget-eachTraveler");
 var modalUnexpectedCost = $(".modal-budget-unexpectedCost");
 var modalDepartureDate = $(".modal-budget-departureDate");
+var cityInputName = $("#city-input");
 
 
 //when the user clicks the budget calculator button, open the modal
@@ -120,6 +121,7 @@ searchBtn.on("click", function(event) {
     // make sure user input a city name, cannot be empty
     if (cityName) {
         getWeatherData(cityName);
+        getEvents();
         //clear old content
         cityInputName.val('');
     } else {

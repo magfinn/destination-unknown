@@ -1,15 +1,16 @@
 :root {
-    --primary-color: #31708E;
-    --secondary-color: #5085A5;
-    --tertiary-color: #8FC1E3;
+    /* --primary-color: #31708E; */
+    --primary-color: #2f4f4f;
+    --secondary-color: whitesmoke;
+    --tertiary-color: #acbcc5;
     --white-color: #F7F9FB;
     --green-color: #687864;
   }
 
-
 body {
     background-color: var(--white-color) ;
     font-family: Helvetica, Arial, sans-serif;
+    color: dark
     
 }
 
@@ -19,84 +20,65 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 25px;
-    background-color: var(--tertiary-color);
-    background-image: linear-gradient(45deg, var(--green-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%);
+    margin-bottom: 10px;
+    background-color: var(--secondary-color);
     border-radius: 30px;
     
 }
 /* H1 styles start */
 .rt-bg {
-    flex: 30%;
-    background-image: url("../images/rt-05.jpg");
     background-size: cover;
     background-position: center;
     background-position: 80%;
     border-radius: 30px;
-    height: 200px;
+    height: 100px;
     transition: transform .7s ease-in-out;
 }
-.rt-bg:hover {
-    transform: rotate(360deg);
-  }
-
 header h1 {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 10vh;
     color: var(--primary-color);    
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-
-.big-letter {
-    font-size: 75px;
+.opac {
+    opacity: 40%;
 }
 /* H1 styles end */
 
 /* navigation styles start */
 header nav {
     flex: 70%;
-    margin: 0 0;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
    }
-
 header nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     list-style: none;
-    padding: 0 0;
+    padding: 5;
 }
-
 header nav ul li a {
     padding: 15px;
-    color: var(--tertiary-color);
-    font-weight: bold;
+    color: var(--primary-color);
+    /* font-weight: bold; */
     font-size: 1.75vw;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
     text-decoration: none;
 }
-
 header nav ul li a:hover {
-    background-color: #FA8BFF;
+    /* background-color: #FA8BFF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, 
-    #2BD2FF 52%, #2BFF88 90%);
+    #2BD2FF 52%, #2BFF88 90%); */
     transition: all .4s ease-in-out;
     /*background-color: var(--tertiary-color);*/
-    color: var(--white-color);
+    color: var(--tertiary-color);
     border: solid 3px var(--primary-color);
     border-radius: 30px;
     font-size: 2.5vw;
 }
-
 header nav ul li {
     transition: transform .5s ease-in-out;
-}
-header nav ul li:hover {
-    transform: rotate(360deg);
 }
 /* navigation styles end */
 
@@ -109,9 +91,9 @@ header nav ul li:hover {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 25vw;
+    height: 20vw;
     border-radius: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 .jumbotron form {
     background-color: white;
@@ -128,7 +110,7 @@ header nav ul li:hover {
     margin-bottom: 20px;
 }
 .where-to::placeholder {
-    font-size: 3vw;
+    font-size: 2.5vw;
     padding-left: 10px;
     
 }
@@ -149,23 +131,21 @@ header nav ul li:hover {
 
 /* MAPS styles start */
 #maps{
-    flex: 100%;
-    background-color: var(--tertiary-color);
-    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%);
+    width: 65%;
+    background-color: var(--secondary-color);
     flex: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: 30px;
+    /* border-radius: 30px; */
 }
 #maps h4 {
     flex: 100%;
     margin: 0 0 15px 0;
 }
 #maps h4 {
-    color: var(--tertiary-color);
-    border: solid 3px var(--primary-color);
+    color: var(--primary-color);
+    border: solid 3px var(--green-color);
     border-radius: 30px;
     font-size: 2.5vw;
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -183,10 +163,11 @@ header nav ul li:hover {
 
 /* WEATHER styles start */
 #weather{
-    flex: 100%;
-    background-color: var(--tertiary-color);
-    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%);
+    flex: 50%;
+    width: 65%;
+    background-color: var(--secondary-color);
+    /* background-image: linear-gradient(45deg, var(--tertiary-color) 0%,  */
+    /* var(--secondary-color) 52%, var(--green-color) 90%); */
     flex: 50%;
     display: flex;
     flex-wrap: wrap;
@@ -198,7 +179,7 @@ header nav ul li:hover {
     margin: 0 0 15px 0;
 }
 #weather h4 {
-    color: var(--tertiary-color);
+    color: var(--primary-color);
     border: solid 3px var(--primary-color);
     border-radius: 30px;
     font-size: 2.5vw;
@@ -208,9 +189,9 @@ header nav ul li:hover {
     height: 4vw;
 }
 #weather h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
+    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
+    box-shadow: 8px 15px 0px var(--secondary-color);
     transition: all 500ms ease;
 }
 #weather span {
@@ -238,14 +219,15 @@ header nav ul li:hover {
 
 /* Tripadvisorstyles start */
 #tripadvisor{
-    flex: 100%;
-    background-color: var(--tertiary-color);
-    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%);
+    width: 65%;
+    background-color: var(--secondary-color);
+    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%); */
     flex: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    /* border-radius: 30px; */
     border-radius: 30px;
     margin-bottom: 25px;
 }
@@ -254,7 +236,7 @@ header nav ul li:hover {
     margin: 0 0 15px 0;
 }
 #tripadvisor h4 {
-    color: var(--tertiary-color);
+    color: var(--primary-color);
     border: solid 3px var(--primary-color);
     border-radius: 30px;
     font-size: 2.5vw;
@@ -264,66 +246,55 @@ header nav ul li:hover {
     height: 4vw;
 }
 #tripadvisor h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
+    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
+    box-shadow: 8px 15px 0px var(--secondary-color);
     transition: all 500ms ease;
 }
-
+#tripadvisor .event-container {
+   width: 100%;
+   border-radius: 20px;
+   border: 1 px solid darkslategray;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+}
+.event-container{
+    display: flex;
+    flex: wrap row;
+    align-content: center;
+    justify-content: space-between;
+    margin:1%;
+}
+a {
+    text-decoration:none;
+}
 /* Tripadviser styles END */
 
-/* Food & Drink start */
-#food{
-    flex: 100%;
-    background-color: var(--tertiary-color);
-    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%);
-    flex: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-radius: 30px;
-    margin-bottom: 25px;
-}
-#food h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#food h4 {
-    color: var(--tertiary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#food h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
-}
-/* Food & Drink styles END */
-
 /* body divs styles start */
-
-.container1,
-.container2 {
+.container1 .container2 .container3 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 25px;
+    justify-content: space-around;
+    padding:5px;
+    margin-bottom: 20px;
+    width: 60%;
 }
-
+div {
+    margin: 5px;
+}
+.container4 {
+    display: flex;
+    justify-content: right;
+    width: 40%;
+}
 /* body divs styles end */
 
 /* Budget-modal Styles start */
 #budget {
-    background-color: var(--tertiary-color);
-    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%);
+    width: 65%;
+    background-color: var(--secondary-color);
+    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%); */
     flex:50%;
     display: flex;
     flex-wrap: wrap;
@@ -338,7 +309,7 @@ header nav ul li:hover {
     margin: 0 0 15px 0;
 }
 #budget h4 {
-    color: var(--tertiary-color);
+    color: var(--primary-color);
     border: solid 3px var(--primary-color);
     border-radius: 30px;
     font-size: 2.5vw;
@@ -348,22 +319,22 @@ header nav ul li:hover {
     height: 4vw;
 }
 #budget h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
+    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
+    box-shadow: 8px 15px 0px var(--secondary-color);
     transition: all 500ms ease;
 }
 .budget-callMessage p {
-    color: var(--white-color);
+    color: var(--primary-color);
     font-size: 25px;
     text-align: center;
     margin: 10px 0 5px 0;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */
 }
 .budget-calculatorDatails p,
 .budget-calculatorDatails ul, 
 .budget-calculatorDatails li {
-    color: var(--white-color);
+    color: var(--primary-color);
     font-size: 20px;
     text-align: left;
     margin: 10px 0 5px 0;
@@ -384,7 +355,7 @@ header nav ul li:hover {
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     color: var(--white-color);
     background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
+    background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
     var(--secondary-color) 52%, var(--green-color) 90%);
     padding: 10px;
     margin: 0 5px 0 5px;
@@ -422,7 +393,6 @@ header nav ul li:hover {
     overflow: auto;
     background-color: rgba(0,0,0,0.75);
 }
-
 .modal-budget-content {
     background-color: #FA8BFF;
     background-image: linear-gradient(45deg, #FA8BFF 0%,
@@ -440,7 +410,6 @@ header nav ul li:hover {
     flex:100%;
     margin: 5px 0;
 }
-
 .modal-budget-header {
     display: flex;
     flex-wrap: wrap;
@@ -511,26 +480,27 @@ header nav ul li:hover {
 .modal-budget-saveBtn {
     background-color: #2BFF88;
 }
-/* Budget-modal Styles start */
+/* Budget-modal Styles ends */
 
 /* Spotify styles start */
 #spotify {
-    background-color: var(--tertiary-color);
-    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%);
-    flex: 50%;
-    display: flex;
+    background-color: var(--secondary-color);
+    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
+    var(--secondary-color) 52%, var(--green-color) 90%); */
+    float: right;
+    align-content: flex-end;
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 30px;
-    width:90%;
+    margin-right: 15px;
+    padding: 5px;
 }
 #spotify h4 {
     flex: 100%;
     margin: 0 0 15px 0;
 }
 #spotify h4 {
-    color: var(--tertiary-color);
+    color: var(--primary-color);
     border: solid 3px var(--primary-color);
     border-radius: 30px;
     font-size: 2.5vw;
@@ -540,9 +510,9 @@ header nav ul li:hover {
     height: 4vw;
 }
 #spotify h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
+    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
+    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
+    box-shadow: 8px 15px 0px var(--secondary-color);
     transition: all 500ms ease;
 }
 /* Spotify styles END */
@@ -551,11 +521,12 @@ header nav ul li:hover {
     footer {
         text-align: center;
         padding: 15px;
-        color: var(--primary-color);
-        font-weight: bold;
-        font-size: 1vw;
+        color: var(--white-color);
+        background-color: var(--primary-color);
+        font-size: 0.7vw;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
+/* Footer Style END */
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 1010px) {
