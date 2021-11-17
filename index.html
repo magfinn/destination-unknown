@@ -94,8 +94,32 @@
                     </div>
                     <!-- Spotify playlist - Ana -->
                     <div id="spotify">
-                        <h4>Spotify</h4>
-                        <div>placeholder</div>
+                        <h4 id="title">Road Trip Songs</h4>
+                        <form action="" id="form">
+                            <input type="hidden" id='hidden_token'>
+                            <div class="selector">
+                                <label for="Genre">Genre:</label>
+                                <select name="" id="select_genre">
+                                    <option>Select...</option>                    
+                                </select>
+                            </div>
+                            <div class="selector">
+                                <label for="Genre">Playlists:</label>
+                                <select name="" id="select_playlist">
+                                    <option>Select...</option>                    
+                                </select>
+                            </div>                  
+                            <div class="selector">
+                                <button type="submit" id="btn_submit">Search</button>
+                            </div>          
+                        </form>        
+                        <div class="row">
+                                <div class="song-list" id="song-list-hide">
+                                    
+                                </div>                                             
+                            <div id="song-detail">                
+                            </div>
+                        </div>   
                     </div>
                 </div>
             <footer>
@@ -149,5 +173,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <!-- Local js -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/spotify.js"></script>
 </body>
 
