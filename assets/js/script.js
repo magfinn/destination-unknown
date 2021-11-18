@@ -15,6 +15,7 @@ var modalNumberOfTraveler = $(".modal-budget-NumberOfTraveler");
 var modalEachTraveler= $(".modal-budget-eachTraveler");
 var modalUnexpectedCost = $(".modal-budget-unexpectedCost");
 var modalDepartureDate = $(".modal-budget-departureDate");
+var cityInputName = $("#city-input");
 
 
 //when the user clicks the budget calculator button, open the modal
@@ -120,6 +121,7 @@ searchBtn.on("click", function(event) {
     // make sure user input a city name, cannot be empty
     if (cityName) {
         getWeatherData(cityName);
+        getEvents();
         //clear old content
         cityInputName.val('');
     } else {
@@ -166,12 +168,12 @@ var getWeatherData = function (city) {
             response.json().then(function(uvData){
                //console.log(uvData.current.uvi);
                 if (uvData.current.uvi < 3) {
-                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge badge-success'>" + uvData.current.uvi + "</span>");
+                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge-success'>" + uvData.current.uvi + "</span>");
                 }
                 else if (uvData.current.uvi >= 3 && uvData.current.uvi < 6) {
-                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge badge-warning'>" + uvData.current.uvi + "</span>");
+                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge-warning'>" + uvData.current.uvi + "</span>");
                 } else if (uvData.current.uvi > 6) {
-                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge badge-danger'>" + uvData.current.uvi + "</span>");
+                    todayWeather.append("<p class='displayMain'>UV Index: " + "<span class = 'badge-danger'>" + uvData.current.uvi + "</span>");
                 };          
             }
         )});           
