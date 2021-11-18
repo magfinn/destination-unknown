@@ -18,6 +18,9 @@ var modalDepartureDate = $(".modal-budget-departureDate");
 var cityInputName = $("#city-input");
 
 
+
+
+
 //when the user clicks the budget calculator button, open the modal
 modalBudgetBtn.on("click", function() {
     modalBudget.removeClass("modal-budget-hidden");
@@ -113,6 +116,7 @@ var searchCount = 0;
 searchBtn.on("click", function(event) {
     // prevent page from refreshing
     event.preventDefault();
+
 
     // get value of the input city name
     var cityName = cityInputName.val().trim();
