@@ -550,11 +550,10 @@ a {
 }
 
 .selector label{
-    color: var(--white-color);
+    color: var(--primary-color);
     font-size: 25px;
     text-align: center;
     margin: 10px 0 5px 0;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     padding-right: 2%;
 }
 
@@ -609,15 +608,16 @@ a {
 
 
 #image{
-    padding-left: 35%
-    ;}
+    padding-left: 35%;
+    padding-top: 10% ;
+}
 
 .row{
     width: 100%;
 }
 
 .song-detail-text{
-    color: var(--white-color);
+    color: var(--primary-color);
     font-size: 20px;
     text-align: center;
     margin: 10px 0 5px 0;
@@ -628,7 +628,7 @@ a {
 
 .listitem{
     padding-right: 2%;
-    background-color: #8FC1E3;
+    background-color: var(--primary-color);
     padding-bottom: 2%;
     color: var(--white-color);
     padding:1%;
@@ -690,3 +690,4 @@ a {
         transition: all .5s ease-out;
     }
 }
+

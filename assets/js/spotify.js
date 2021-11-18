@@ -1,5 +1,8 @@
 
+
 const APIController = (function() {
+    $("#back").css('display','none');
+
     
     const clientId = '51e024a2658f4e14871696389e01d29d';
     const clientSecret = '182cbc420d1c4785b239492ab1dede74';
@@ -91,6 +94,7 @@ const APIController = (function() {
 
 // UI Module
 const UIController = (function() {
+
 
     //object to hold references to html selectors
     const DOMElements = {
@@ -233,6 +237,7 @@ const APPController = (function(UICtrl, APICtrl) {
         $("#title").text("Pick a song...");
 
 
+
         e.preventDefault();
         // clear tracks
         UICtrl.resetTracks();
@@ -254,6 +259,10 @@ const APPController = (function(UICtrl, APICtrl) {
         // prevent page reset
         console.log("Click on song");
         $("#song-list-hide").css('display','none');
+        $("#back").css('display','block');
+        $("#title").text("Go back to discover more...");
+
+
 
         e.preventDefault();
         UICtrl.resetTrackDetail();
@@ -269,7 +278,6 @@ const APPController = (function(UICtrl, APICtrl) {
 
     return {
         init() {
-            console.log('App is starting');
             loadGenres();
         }
     }
@@ -278,3 +286,4 @@ const APPController = (function(UICtrl, APICtrl) {
 
 // will need to call a method to load the genres on page load
 APPController.init();
+
