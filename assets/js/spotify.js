@@ -17,60 +17,44 @@ const APIController = (function() {
         });
 
         const data = await result.json();
-        console.log(data.access_token);
         return data.access_token;
     }
     
     const getGenre = async (token) => {
-
         const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {
             method: 'GET',
             headers: { 'Authorization' : 'Bearer ' + token}
         });
-
         const data = await result.json();
-        console.log(data.categories.items);
         return data.categories.items;
     }   
 
     const getPlayslistxgenre = async (token, genreId) => {
-
-        const limit = 10;
-        
-        console.log(token,genreId);
-        const result = await fetch(`https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`, {
+            const limit = 10;
+            const result = await fetch(`https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`, {
             method: 'GET',
             headers: { 'Authorization' : 'Bearer ' + token}
         });
-
         const data = await result.json();
-        console.log(data.playlists.items);
         return data.playlists.items;
     }
 
     const getSongs = async (token, tracksEndPoint) => {
-
         const limit = 10;
-        console.log(token,tracksEndPoint);
         const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
             method: 'GET',
             headers: { 'Authorization' : 'Bearer ' + token}
         });
-
         const data = await result.json();
-        console.log(data.items);
         return data.items;
     }
 
     const getSong = async (token, trackEndPoint) => {
-        console.log(token,trackEndPoint);
         const result = await fetch(`${trackEndPoint}`, {
             method: 'GET',
             headers: { 'Authorization' : 'Bearer ' + token}
         });
-
         const data = await result.json();
-        console.log(data);
         return data;
     }
 
@@ -107,7 +91,6 @@ const UIController = (function() {
 
     //public methods
     return {
-
         //Get input fields
         inputField() {
             return {
@@ -118,27 +101,22 @@ const UIController = (function() {
                 songDetail: document.querySelector(elementID.divSongDetail)
             }
         },
-
         // Create select list option
         createGenre(text, value) {
-            console.log(text,value);
             const html = `<option value="${value}">${text}</option>`;
             document.querySelector(elementID.selectGenre).insertAdjacentHTML('beforeend', html);
         }, 
 
         createPlaylist(text, value) {
-            console.log(text,value);
             const html = `<option value="${value}">${text}</option>`;
             document.querySelector(elementID.selectPlaylist).insertAdjacentHTML('beforeend', html);
         },
 
         // Create a track list group item 
         createTrack(id, name) {
-            console.log(id,name,"name");
             const html = `<a href="#" class="listitem" id="${id}">${name}</a>`;
             document.querySelector(elementID.divSonglist).insertAdjacentHTML('beforeend', html);
         },
-
         // Create the song description
         createTrackDetail(img, title, artist) {
 
@@ -200,7 +178,6 @@ const APPController = (function(UICtrl, APICtrl) {
     // Elements id
 
     const DOMInputs = UICtrl.inputField();
-    console.log("dominputs",DOMInputs);
     // Get genres 
     const loadGenres = async () => {
         //Get token
@@ -214,8 +191,6 @@ const APPController = (function(UICtrl, APICtrl) {
 
     // create genre change event listener
     DOMInputs.genre.addEventListener('change', async () => {
-        console.log("Click on genre");
-
         //reset the playlist
         UICtrl.resetPlaylist();
         //Get token
@@ -234,7 +209,6 @@ const APPController = (function(UICtrl, APICtrl) {
     // create submit button click event listener
     DOMInputs.submit.addEventListener('click', async (e) => {
         // Prevent page reset
-        console.log("Click on album");
         $("#form").css('display','none');
         $("#title").text("Pick a song...");
         $("#song-list-hide").css('display','flex');
@@ -252,9 +226,7 @@ const APPController = (function(UICtrl, APICtrl) {
     });
 
     // create song selection click event listener
-    DOMInputs.tracks.addEventListener('click', async (e) => {
-        console.log("Click on song");
-        
+    DOMInputs.tracks.addEventListener('click', async (e) => {        
         $("#song-list-hide").css('display','none');
         $("#back").css('display','block');
         $("#title").text("Go back to discover more...");
