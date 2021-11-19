@@ -26,22 +26,29 @@ var displayEvents = function(data) {
             console.log(events[count]);
             //create variable for each event
             var currentEvent=events[count];
+            var eventImg = currentEvent.images[4].url;
+            console.log(eventImg);
             //each event name
             var eventDiv = document.createElement("div");
             var eventName = document.createElement('h5');
             var eventDate = document.createElement('p');
-            var eventURL = document.createElement('p');
+            var eventURL = document.createElement('div');
+            var eventImgDiv = document.createElement('div');
+            var imgTag = `<img style ='' width='50px' height='50px' src='${eventImg}'/>`
             eventDate.append(currentEvent.dates.start.localDate);
             eventName.append(currentEvent.name);
-            eventURL.innerHTML+=`<p><a href= $('currentEvent.url')>Purchase Tickets</a></p>`;
+            eventURL.innerHTML+=`<a target='_blank' href='${currentEvent.url}'><p>Purchase Tickets</p></a>`;
+            eventImgDiv.innerHTML+=imgTag;
             // eventLink.append(currentEvent.url);
             // eventDiv.append(eventDate);
             eventDiv.appendChild(eventDate);
             eventDiv.appendChild(eventName);
             eventDiv.appendChild(eventURL);
             eventContainer.append(eventDiv);
+            eventDiv.append(eventImgDiv);
 
-            eventDiv.setAttribute("style", "display:flex; width:18%; margin:0%; align-items:center; flex-direction:column; border: 1pt solid; border-radius:20px; background: whitesmoke");
+            eventDiv.setAttribute("style", "display:flex; width:18%; height: auto; margin:0%; align-items:center; flex-direction:column; border: 1pt solid; border-radius:20px");
+            // backgroundImage: url(${eventImg}); backgroundSize: cover;
             eventName.setAttribute("style", "text-align: center; font-size: 1vh")
             eventURL.setAttribute("style", "text-decoration: none; color: #2f4f4f; text-align: center")
             eventDate.setAttribute("style", "text-align: center");
