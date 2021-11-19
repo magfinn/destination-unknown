@@ -33,7 +33,8 @@ var displayEvents = function(data) {
             var eventName = document.createElement('h5');
             var eventDate = document.createElement('p');
             var eventURL = document.createElement('div');
-            var eventImgDiv = document.createElement('div');
+            var eventImgDiv = document.createElement('div');displayEvents
+            var eventDiv.addClass('')
             var imgTag = `<img style ='' width='50px' height='50px' src='${eventImg}'/>`
             eventDate.append(currentEvent.dates.start.localDate);
             eventName.append(currentEvent.name);
@@ -48,6 +49,7 @@ var displayEvents = function(data) {
             eventDiv.append(eventImgDiv);
 
             eventDiv.setAttribute("style", "display:flex; width:18%; height: auto; margin:0%; align-items:center; flex-direction:column; border: 1pt solid; border-radius:20px");
+            //use bulma and set class to "columns"(2 columns of 3 events each)
             // backgroundImage: url(${eventImg}); backgroundSize: cover;
             eventName.setAttribute("style", "text-align: center; font-size: 1vh")
             eventURL.setAttribute("style", "text-decoration: none; color: #2f4f4f; text-align: center")
@@ -68,7 +70,7 @@ var getEvents = function() {
     console.log(cityName);
     console.log('city: ', cityName);
     
-    fetch(tmRootURL + cityName +'&page=1&size=10&apikey=' + APIKey)
+    fetch(tmRootURL + cityName +'&page=1&size=6&apikey=' + APIKey)
 
     .then(response =>
         response.json())
