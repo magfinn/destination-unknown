@@ -33,8 +33,7 @@ var displayEvents = function(data) {
             var eventName = document.createElement('h5');
             var eventDate = document.createElement('p');
             var eventURL = document.createElement('div');
-            var eventImgDiv = document.createElement('div');displayEvents
-            var eventDiv.addClass('')
+            var eventImgDiv = document.createElement('div');displayEvents;
             var imgTag = `<img style ='' width='50px' height='50px' src='${eventImg}'/>`
             eventDate.append(currentEvent.dates.start.localDate);
             eventName.append(currentEvent.name);

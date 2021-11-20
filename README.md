@@ -76,9 +76,9 @@ This is a preview of Destination Unknown in a computer view.
 
 ![Destination Unknown in a computer view](assets/images/preview.png)
 
-This is a preview of Destination Unknown in an IPhone X view. 
+This is a preview of Destination Unknown on smaller screens. 
 
-![Destination Unknown in an IPhone X view](assets/images/preview2.png)
+![Destination Unknown on smaller screens](assets/images/preview2.png)
 
 ## Links
 
