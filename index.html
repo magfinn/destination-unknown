@@ -5,134 +5,80 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma-rtl.css" integrity="sha512-lRrLGKpDJnz2o4GiW8kQ+5ugePN6VGOquzU+nLqJaYPJ3XBk2FXldC+EhHBJVKuO93Ac4sEua9g+VMfWtNcI4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma-rtl.min.css" integrity="sha512-Yb3erqU+mk7RBdOFQXcE9QbdHnFXg/jUFqTLmKXQX3MdUD3JLhr+6SB8hqNbZqiGfXFQCSdw0tccmQSJGLWkCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.css" integrity="sha512-7VGuxKU1BFMmA+dC7NiW8jF0YOIe6bibjUBr42unVtEsI/UYzXMS3nkgNvmsY4yqauxeiEs4bXF6fPLsCuxN/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="./assets/css/style.css" />
    <title>RoadTrip</title>
    </head>
 
    <body>
        <header>
-           <div class="rt-bg">
-                <h1>Destination <span class="opac">Un</span>known</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                            <a href="#map">Map</a>
-                    </li>
-                    <li>
-                            <a href="#weather">Weather</a>
-                        </li>
-                        <li>
-                            <a href="#tripadvisor">Events</a>
-                        </li>
-                        <!-- <li>
-                            <a href="#food">Food & Drink</a>
-                        </li> -->
-                        <li>
-                            <a href="#budget">Budget</a>
-                        </li>
-                        <li>
-                            <a href="#spotify">Playlist</a>
-                        </li>
-                    </ul>
+            <nav class="navbar is-transparent">
+                <div class="navbar-brand">
+                    <a class="nav-bar item" href="#">
+                        <h1 class="rt-bg">Destination <span class="opac">Un</span>known</h1>
+                    </a>
+                </div>
+                <div id="navbarTransparent" class="navbar-menu">
+                    <div class="navbar-end">
+                            <div class="navbar-item has-dropdown is-hoverable is-large">
+                                <a class="navbar-link" href="#">Get Started</a>
+                                <div class="navbar-dropdown is-boxed">
+                                    <a href="#map" class="navbar-item">Get There</a>
+                                    <a href="#weather" class="navbar-item">Plan Ahead</a>
+                                    <a href="#tripadvisor" class="navbar-item">Book an Event</a>
+                                    <a href="#budget" class="navbar-item">Budget It</a>
+                                    <a href="#spotify" class="navbar-item">Get Pumped</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
-       </header>
-        <!-- Jumbotron - photo of a vacation somewhere -->
-        <div class="jumbotron">
+        </header>
+
+        <section class="hero is-large">
+            <div class="hero-body">
                 <form>
-                    <button type="submit" class="city-searchBtn">
+                    <button type="submit" class="city-searchBtn button is-rounded is-hovered">
                         <img src="./assets/images/search.png">
                     </button>
-                    <input name="city-input"
-                    id="city-input" class="where-to" type="text" placeholder="Where to?"></input>
-                </form>                
-        </div>
-        <div class="container1">
-                <!-- Google maps - Maggie -->
-                <div id="maps">
-                    <h4>Maps</h4>
-                    <div></div>
-                </div>
-                <!-- Weather - Khanh -->
-                <div id="weather">
-                    <h4>Destination's Current Weather</h4>
-                    <div class="current-weather"></div>
-                    <span>For the next 5 days weather forecast, please <a href='https://khanhlam90.github.io/weather-dashboard/' target="_blank">visit our weather dashboard.</a></span>
-                </div>
-        </div>
-        <div class="container2">
-            <!--Tripadvisor - Maggie  -->
-            <div id="tripadvisor">
-                <h4>Events</h4>
-                <div class = "event-container">
-                    <!-- divs for displaying events -->
-                        <!-- <div class = "event" id="0">1</div>
-                        <div class ="event" id="1">2</div>
-                        <div class = "event" id="2">3</div>
-                        <div class = "event" id="3">4</div>
-                        <div class = "event" id="4">5</div>
-                        <div class = "event" id="5">6</div>
-                        <div class = "event" id="6">7</div>
-                        <div class = "event" id="7">8</div>
-                        <div class = "event" id="8">9</div>
-                        <div class = "event" id="9">10</div> -->
-                </div>
+                    <input name="city-input" id="city-input" class="where-to" type="text" placeholder="Where to?"></input>
+                </form> 
             </div>
-        </div>
-        <div class="container3">
-            <!-- Budget with mod4" - Khanh -->
-            <div id="budget">
-                    <h4>Plan Your Budget</h4>
-                    <div class="budget-callMessage">
-                        <p>Want to plan your easy budget - click below button and fill out a short form</p>
-                    </div>     
-                    <div class="budget-calculate">
-                        <button class="budget-calculateBtn" typle="buton">Budget Calculator</button>
-                    </div>
-                    <div class="budget-calculatorDatails">
-                    </div>                
-        </div>
-        <div class="container4">
-            <!-- Spotify playlist - Ana -->
-            <div id="spotify">
-                <h4 id="title">Road Trip Songs</h4>
-                <form action="" id="form">
-                    <input type="hidden" id='hidden_token'>
-                    <div class="selector">
-                        <label for="Genre">Genre:</label>
-                        <select name="" id="select_genre">
-                            <option>Select...</option>                    
-                        </select>
-                    </div>
-                    <div class="selector">
-                        <label for="Genre">Playlists:</label>
-                        <select name="" id="select_playlist">
-                            <option>Select...</option>                    
-                        </select>
-                    </div>                  
-                    <div class="selector">
-                        <button type="submit" id="btn_submit">Search</button>
-                    </div>          
-                </form>        
-                <div class="row" id="row">
-                        <div class="song-list" id="song-list-hide">
-                        </div>                                             
-                    <div id="song-detail">                
-                    </div>
-                    <div class="selector">
-                        <button type="button" id="back">Go Back</button>
-                    </div>          
-                </div>     
-                  
-    </div>
-        </div>
-    <footer>
-                    <h2>❤️ Made with love by Team Nine</h2>
-    </footer>
+        </section>
 
-    <!-- Budget Modal -->
-    <div id="modal-budget" class="modal-budget-hidden">
+            <!-- container for content -->
+        <section class="section" id="api-sections">
+
+            <!-- Ancestor Tile (holds all sections) -->
+            <div class="tile is-ancestor">
+
+                <!-- Parent Tile #1 (holds maps, events & budget) -->
+                <div class="tile is-parent is-vertical is-8">
+
+                    <!-- Maps - Santiago -->
+                    <div class="tile is-child" id="maps">
+                        <h4>Get There</h4>
+                    </div>
+                    
+                    <!-- Budget - Khanh -->
+                    <div class="tile is-child" id="budget">
+                        <div class="budget-callMessage">
+                            <h4>Plan Your Budget</h4>
+                            <p>Want to plan your easy budget - click below button and fill out a short form</p>
+                        </div>     
+                        <div class="budget-calculate">
+                            <button class="budget-calculateBtn" type="button">Budget Calculator</button>
+                        </div>
+                        <div class="budget-calculatorDatails">
+                        </div>
+                    </div>
+                    <!-- end budget -->
+                           <!-- Budget Modal -->
+        <div id="modal-budget" class="modal-budget-hidden">
             <div class="modal-budget-dialog">
                 <div class="modal-budget-content">
 
@@ -168,18 +114,83 @@
                     </div>
                 </div>
             </div>
-    </div> 
-    <!-- Jquery files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!-- Local js -->
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/spotify.js"></script>
-    <script src="./assets/js/tripadvisor.js"></script>
+        </div> 
+                </div>
+                <!-- end parent tile #1 -->
+
+                <!-- Parent Tile #2 (holds weather & spotify)-->
+                <div class="tile is-parent is-vertical">
+
+                    <!-- Weather - Khanh -->
+                    <div class="tile is-child" id="weather">
+                        <h4>Weather</h4>
+                        <div class="current-weather">
+                            <span>For the next 5 days weather forecast, please <a href='https://khanhlam90.github.io/weather-dashboard/' target="_blank">visit our weather dashboard.</a></span>
+                        </div>
+                    </div>
+
+                     <!-- Events - Maggie -->
+                     <div class="tile is-child" id="tripadvisor">
+                        <h4>Events</h4>
+                        <div id="event-container" class="card is-parent"></div>
+                    </div>
+
+                    <!-- Spotify - Ana -->
+                    <div class="tile is-child" id="spotify">
+                        <h4>Playlist</h4>
+                        <form action="" id="form">
+                            <input type="hidden" id='hidden_token'>
+                            <div class="selector tile is-child">
+                                <label for="Genre">Genre:</label>
+                                <select name="" id="select_genre">
+                                    <option>Select...</option>                    
+                                </select>
+                            </div>
+                            <div class="selector">
+                                <label for="Genre">Playlists:</label>
+                                <select name="" id="select_playlist">
+                                    <option>Select...</option>                    
+                                /select>
+                            </div>                  
+                            <div class="selector">
+                                <button type="submit" id="btn_submit">Search</button>
+                            </div>          
+                        </form>        
+                        <div class="row" id="row">
+                            <div class="song-list" id="song-list-hide"></div>                                        
+                            <div id="song-detail"></div>
+                            <div class="selector">
+                                <button type="button" id="back">Go Back</button>
+                            </div>          
+                        </div>
+                    </div>
+                    <!-- end spotify -->
+                </div>
+                <!-- end parent tile #2 -->
+            </div>
+            <!-- end tile ancestor (holds events, budget, weather & spotify) -->
+        </section>
+        <!-- end section with all 5 tiles -->
+   
+        <footer>
+            <h2>❤️ Made with love by Team Nine</h2>
+        </footer>
+
+
+
+        <!-- Jquery files -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <!-- Local js -->
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/spotify.js"></script>
+        <script src="./assets/js/tripadvisor.js"></script>
 
 </body>
+
 </html>
+
 

@@ -16,6 +16,7 @@ var modalEachTraveler= $(".modal-budget-eachTraveler");
 var modalUnexpectedCost = $(".modal-budget-unexpectedCost");
 var modalDepartureDate = $(".modal-budget-departureDate");
 var cityInputName = $("#city-input");
+var apiSections = $("api-sections");
 
 
 
@@ -128,6 +129,8 @@ searchBtn.on("click", function(event) {
         getEvents();
         //clear old content
         cityInputName.val('');
+        //display api content
+        
     } else {
         return;
     }

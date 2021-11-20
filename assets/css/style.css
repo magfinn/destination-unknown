@@ -6,38 +6,26 @@
     --white-color: #F7F9FB;
     --green-color: #687864;
   }
-
+.tile {
+    margin: 3%;
+    background-color: var(--secondary-color);
+}
 body {
     background-color: var(--white-color) ;
     font-family: Helvetica, Arial, sans-serif;
-    /* color: dark; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /* margin: 0 75px; */
+    color: dark
+    
 }
 
 header {
-    flex: 100%;
-    background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
-    background-color: var(--secondary-color);
-    border-radius: 30px;
-    
+    border-radius: 30px;  
 }
-/* H1 styles start */
-.rt-bg {
-    background-size: cover;
-    background-position: center;
-    background-position: 80%;
-    border-radius: 30px;
-    height: 100px;
-    transition: transform .7s ease-in-out;
-}
+
 header h1 {
     font-weight: bold;
     font-size: 10vh;
@@ -47,49 +35,9 @@ header h1 {
 .opac {
     opacity: 40%;
 }
-/* H1 styles end */
-
-/* navigation styles start */
-header nav {
-    flex: 70%;
-    justify-content: space-around;
-    margin: 10px 50px;
-   }
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    padding: 5;
-}
-header nav ul li a {
-    padding: 15px;
-    color: var(--primary-color);
-    /* font-weight: bold; */
-    font-size: 1.75vw;
-    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-    text-decoration: none;
-}
-header nav ul li a:hover {
-    /* background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, 
-    #2BD2FF 52%, #2BFF88 90%); */
-    transition: all .4s ease-in-out;
-    /*background-color: var(--tertiary-color);*/
-    color: var(--tertiary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-}
-header nav ul li {
-    transition: transform .5s ease-in-out;
-}
-/* navigation styles end */
 
 /* jumbotron styles start */
-.jumbotron {
-    flex: 100%;
+.hero {
     background-image: url("../images/rt-01.jpg");
     background-size: cover;
     background-position: bottom;
@@ -97,9 +45,8 @@ header nav ul li {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 20vw;
-    border-radius: 30px;
-    margin-bottom: 25px;
+    /* height: 20vw; */
+    margin-bottom: 20px; 
 }
 .jumbotron form {
     background-color: white;
@@ -113,7 +60,7 @@ header nav ul li {
     font-size: 3vw;
     padding-left: 20px;
     border:none;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .where-to::placeholder {
     font-size: 2.5vw;
@@ -135,37 +82,24 @@ header nav ul li {
 }
 /* jumbotron styles end */
 
-/* body divs styles start */
-.container1,
-.container2,
-.container3,
-.container4 {
-    flex: 100%;
+/* hide api sections until city is input*/
+#api-sections {
+    display: none;
+}
+
+/* MAPS styles start */
+/* #maps{
+    width: 65%;
+    background-color: var(--secondary-color);
+    flex: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 30px;
-    margin: 25px 150px 25px 150px;
-}
-/* body divs styles end */
-
-/* MAPS styles start */
-#maps {
-    flex: 100%;
-    /* width: 65%; */
-    background-color: var(--secondary-color);
-    /* flex: 50%; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 25px;
-    /* border-radius: 30px; */
-}
-#maps h4 {
+} */
+h4 {
     flex: 100%;
     margin: 0 0 15px 0;
-}
-#maps h4 {
     color: var(--primary-color);
     border: solid 3px var(--green-color);
     border-radius: 30px;
@@ -175,56 +109,24 @@ header nav ul li {
     margin-bottom: 0;
     height: 4vw;
 }
-#maps h4:hover{
+h4:hover{
     -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
     -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
     box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
-}
-.maps iframe {
-    text-align: center;
 }
 /* MAPS styles END */
 
 /* WEATHER styles start */
-#weather {
-    flex: 100%;
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--tertiary-color) 0%,  */
-    /* var(--secondary-color) 52%, var(--green-color) 90%); */
-    display: flex;
-    flex-wrap: wrap;
+#weather{
     justify-content: center;
-    border-radius: 30px;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 10%;
 }
-#weather h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#weather h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#weather h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
-}
+
 #weather span {
     margin: 15px 0;
 }
 .current-weather {
-    flex:100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -242,86 +144,41 @@ header nav ul li {
     margin:0;
     padding:0;
 }
-.badge-success {
-    background-color: green;
-    color: white;
-}
-.badge-warning{
-    background-color: orange;
-    color: white;
-}
-.badge-danger {
-    background-color: red;
-    color: white;
-}
 /* WEATHER styles END */
 
 /* Tripadvisorstyles start */
-#tripadvisor {
-    flex: 100%;
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    /* flex: 50%; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 30px;
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-#tripadvisor h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#tripadvisor h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#tripadvisor h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
-}
-#tripadvisor .event-container {
-   width: 100%;
-   border-radius: 20px;
-   border: 1 px solid darkslategray;
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: row;
-}
-.event-container {
-    display: flex;
-    flex-wrap: row;
-    align-content: center;
+#tripadvisor{
     justify-content: space-between;
-    margin:1%;
+    align-content: center;
+    background-color: var(--secondary-color);
 }
+
+/* .event-tile {
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    width: 20%;
+    padding: 2%;
+    margin: 1%;
+    hover:
+}
+.event-tile:hover {
+    opacity: 30%;
+} */
+
+/* .event-title {
+    color: var(--secondary-color);
+    font: bold large;
+} */
+
 a {
     text-decoration:none;
 }
 /* Tripadviser styles END */
 
+
 /* Budget-modal Styles start */
 #budget {
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    flex:50%;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: 30px;
 }
 #budget h4,
 .budget-callMessage,
@@ -329,22 +186,6 @@ a {
 .budget-calculateDetails {
     flex: 100%;
     margin: 0 0 15px 0;
-}
-#budget h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#budget h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
 }
 .budget-callMessage p {
     color: var(--primary-color);
@@ -368,7 +209,6 @@ a {
 .boldText {
     font-weight: bold;
     font-size: 20px;
-
 }
 .budget-calculate {
     text-align: center;
@@ -506,148 +346,19 @@ a {
 
 /* Spotify styles start */
 #spotify {
-    flex: 100%;
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 30px;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
-#spotify h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#spotify h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#spotify h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
-}
-
-#form{
-    margin-right:5%;
-    margin-left:5%;
-    padding:5%;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-}
-
-.selector label{
-    color: var(--primary-color);
-    font-size: 25px;
-    text-align: center;
-    margin: 10px 0 5px 0;
-    padding-right: 2%;
-}
-
-.selector select{
-    border-radius: 5px;
-    width: 60%;
-    height: 26px;
-}
- 
-    .selector button {
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    color: var(--white-color);
-    background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, var(--tertiary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%);
-    padding: 10px;
-    border-radius: 10px;
-    transition: all .5s ease-out;
-    background-size: 1px 100px;
-    width: 30%;
-    margin-left:35%;
-
-}
-
-.selector button:hover {
-    background-position: 1px -50px;
-}
-
-.selector{
-    margin-bottom: 5%;
-
-}
-
-.song-list{
-    margin:2%;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#song-detail{
-    padding-left:30%;
-    padding-right:30%;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex:100%;
-
-}
-
-
-#image{
-    padding-left: 35%;
-    padding-top: 10% ;
-}
-
-.row{
-    width: 100%;
-}
-
-.song-detail-text{
-    color: var(--primary-color);
-    font-size: 20px;
-    text-align: center;
-    margin: 10px 0 5px 0;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    padding-right: 2%;
-    width:100%;
-}
-
-.listitem{
-    padding-right: 2%;
-    background-color: var(--primary-color);
-    padding-bottom: 2%;
-    color: var(--white-color);
-    padding:1%;
-    margin:1%;
-    text-decoration: none;
-
-}
-
 /* Spotify styles END */
 
 /* Footer Start */
     footer {
-        flex:100%;
         text-align: center;
+        padding: 15px;
         color: var(--white-color);
         background-color: var(--primary-color);
         font-size: 0.7vw;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        margin:0;
     }
 /* Footer Style END */
 
@@ -659,47 +370,35 @@ a {
         height: 100px;
         transition: all .5s ease-out;
     }
-
-    .container3{
-        margin:0px;
-    }
-
-    #budget{
-        margin: 25px 150px 25px 150px;
-    }
    
-
+    header div h1 br {
+        display: none;
+    }
     .rt-bg h1 {
-        color: var(--primary-color);    
+        color: white;
         text-align: center;
         font-size: 55px;
-        font-weight: bold;
         text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
+    
+    header nav {
+        flex: 100%;
+        align-items: center;
+        margin: 0 35px;
+    }
+
     header nav ul li a {
-        padding: 15px;
-        color: var(--primary-color);
-        /* font-weight: bold; */
-        font-size: 3.75vw;
-        /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
     }
     header nav ul li a:hover {
-        /* background-color: #FA8BFF;
-        background-image: linear-gradient(45deg, #FA8BFF 0%, 
-        #2BD2FF 52%, #2BFF88 90%); */
-        transition: all .4s ease-in-out;
-        /*background-color: var(--tertiary-color);*/
-        color: var(--tertiary-color);
-        border: solid 3px var(--primary-color);
-        border-radius: 30px;
-        font-size: 2.5vw;
+        font-size: 30px;
     }
+
     .jumbotron {
-        background-image: url("../images/rt-01.jpg");
+        background-image: url("../images/rt-02.jpg");
         background-size: cover;
-        background-position: bottom;
+        background-position: 0 -350px;
         transition: all .5s ease-out;
     }
 }
-

@@ -1,13 +1,10 @@
 var tmRootURL = 'https://app.ticketmaster.com/discovery/v2/events.json?city=';
 var APIKey = 'NkBeiHfEIaAylIBwHGwoVNZQSg7Ahwx4';
-// var tmConsumerSecret = 'NB4naItPPbbYH857';
 var searchBtn = $(".city-searchBtn");
 var cityInputName = $("#city-input");
-var eventContainer = $(".event-container");
-// var cityName = '';
+var eventContainer = $("#event-container");
 var events = {};
 
-//TODO: create a working function to display 10 events
 var displayEvents = function(data) {
     //clear old data
     eventContainer.empty();
@@ -16,49 +13,50 @@ var displayEvents = function(data) {
     console.log(events);
     count=0
 
-        // var eventContainer = $(".event-container");
- 
-        // var eventDiv = $(".event");
-
-
+    // for each event, create elements and display name, date, link to purchase tickets and image
         events.forEach(event => {
             //shows each event
             console.log(events[count]);
             //create variable for each event
             var currentEvent=events[count];
-            var eventImg = currentEvent.images[4].url;
-            console.log(eventImg);
-            //each event name
+            //create elements
             var eventDiv = document.createElement("div");
+            var eventContainer = $("#event-container");
             var eventName = document.createElement('h5');
             var eventDate = document.createElement('p');
-            var eventURL = document.createElement('div');
-            var eventImgDiv = document.createElement('div');displayEvents;
-            var imgTag = `<img style ='' width='50px' height='50px' src='${eventImg}'/>`
-            eventDate.append(currentEvent.dates.start.localDate);
+            var eventURL = document.createElement('p');
+
+            //TODO: fit images to events or take out
+            // var eventImg=currentEvent.images[4].url;
+            // console.log(eventImg);
+            // var eventImgDiv = document.createElement('div');
+            // var eventImgFig = document.createElement('figure');
+            // var imgTag = `<img src='${eventImg}'/>`
+            // eventImgFig.append(imgTag);
+            // eventImgDiv.append(eventImgFig);
+            // eventImgFig.innerHTML+=imgTag;
+            // eventDiv.appendChild(eventImgFig);
+
+            //append elements
             eventName.append(currentEvent.name);
-            eventURL.innerHTML+=`<a target='_blank' href='${currentEvent.url}'><p>Purchase Tickets</p></a>`;
-            eventImgDiv.innerHTML+=imgTag;
-            // eventLink.append(currentEvent.url);
-            // eventDiv.append(eventDate);
-            eventDiv.appendChild(eventDate);
+            eventDate.append(currentEvent.dates.start.localDate);
+            eventURL.innerHTML+=`<a target ='_blank' class='card-footer-item' href= '${currentEvent.url}'><p>Purchase Tickets</p></a>`;
+
+            //append parent elements
             eventDiv.appendChild(eventName);
+            eventDiv.appendChild(eventDate);
             eventDiv.appendChild(eventURL);
             eventContainer.append(eventDiv);
-            eventDiv.append(eventImgDiv);
 
-            eventDiv.setAttribute("style", "display:flex; width:18%; height: auto; margin:0%; align-items:center; flex-direction:column; border: 1pt solid; border-radius:20px");
-            //use bulma and set class to "columns"(2 columns of 3 events each)
-            // backgroundImage: url(${eventImg}); backgroundSize: cover;
-            eventName.setAttribute("style", "text-align: center; font-size: 1vh")
-            eventURL.setAttribute("style", "text-decoration: none; color: #2f4f4f; text-align: center")
-            eventDate.setAttribute("style", "text-align: center");
+            //add classes to DOM elements
+            eventDiv.setAttribute("style", "border-radius:30px; background-color: var(--primary-color); padding: 1%; margin: 1%; align-items: center;");
+            eventDate.setAttribute("style", "color: var(--secondary-color); text-align: center;");
+            eventName.setAttribute("style", "color: var(--secondary-color); font weight: bolder; font-size: 2.5vh; text-align:center;");
+            eventURL.setAttribute("style", "text-decoration: none; color: var(--secondary-color); text-align: center; font-size: 2vh");
 
+            //go to the next event
             count++;
-
-
-
-});
+    });
 };
 
 
@@ -69,7 +67,7 @@ var getEvents = function() {
     console.log(cityName);
     console.log('city: ', cityName);
     
-    fetch(tmRootURL + cityName +'&page=1&size=6&apikey=' + APIKey)
+    fetch(tmRootURL + cityName +'&page=1&size=5&apikey=' + APIKey)
 
     .then(response =>
         response.json())
@@ -77,19 +75,5 @@ var getEvents = function() {
         console.log(data);
         displayEvents(data);
     });
+    
 };
-
-// searchBtn.on('click', function(event) {
-//     console.log("click");
-//     event.preventDefault();
-
-//     // var cityName = cityInputName.val().trim();
-//     // console.log(cityName);
-
-//     localStorage.setItem('city', JSON.stringify(cityName));
-//     if(cityName) {
-//         getEvents();
-//         } else {
-//             return;
-//         };
-// });
