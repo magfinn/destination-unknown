@@ -23,10 +23,7 @@
                 </div>
                 <div id="navbarTransparent" class="navbar-menu">
                     <div class="navbar-end">
-                            <a class = "navbar-item" href="#">
-                                Home
-                            </a>
-                            <div class="navbar-item has-dropdown is-hoverable">
+                            <div class="navbar-item has-dropdown is-hoverable is-large">
                                 <a class="navbar-link" href="#">Get Started</a>
                                 <div class="navbar-dropdown is-boxed">
                                     <a href="#map" class="navbar-item">Get There</a>
@@ -42,7 +39,7 @@
             </nav>
         </header>
 
-        <section class="hero">
+        <section class="hero is-large">
             <div class="hero-body">
                 <form>
                     <button type="submit" class="city-searchBtn button is-rounded is-hovered">
@@ -54,7 +51,7 @@
         </section>
 
             <!-- container for content -->
-        <section class="section">
+        <section class="section" id="api-sections">
 
             <!-- Ancestor Tile (holds all sections) -->
             <div class="tile is-ancestor">
@@ -74,12 +71,50 @@
                             <p>Want to plan your easy budget - click below button and fill out a short form</p>
                         </div>     
                         <div class="budget-calculate">
-                            <button class="budget-calculateBtn" typle="buton">Budget Calculator</button>
+                            <button class="budget-calculateBtn" type="button">Budget Calculator</button>
                         </div>
                         <div class="budget-calculatorDatails">
                         </div>
                     </div>
                     <!-- end budget -->
+                           <!-- Budget Modal -->
+        <div id="modal-budget" class="modal-budget-hidden">
+            <div class="modal-budget-dialog">
+                <div class="modal-budget-content">
+
+                    <div class="modal-budget-header">
+                        <button class="modal-budget-closeModal" type="button">
+                            <span>&times;</span>
+                        </button>
+                        <h5 class="modal-budget-title">Calculate Your Budget</h5>
+                    </div>
+                    <div class="modal-budget-body">
+                        <form>
+                            <div class="modal-budget-form">
+                                    <label for="modal-budget-NumberOfTraveler">Number of Traveler/s:</label>
+                                    <input class="modal-budget-NumberOfTraveler" type="number" placeholder="2">
+                                </div>
+                            <div class="modal-budget-form">
+                                    <label for="modal-budget-eachTraveler">Estimated Cost Per Traveler:</label>
+                                    <input class="modal-budget-eachTraveler" type="number" placeholder="888">
+                                </div>
+                            <div class="modal-budget-form">
+                                    <label for="modal-budget-unexpectedCost">Allowable Unexpected Costs:</label>
+                                    <input class="modal-budget-unexpectedCost" type="number" placeholder="200">
+                                </div>
+                            <div class="modal-budget-form">
+                                    <label for="modal-budget-departureDate">Departure Date:</label>
+                                    <input class="modal-budget-departureDate" type="text" placeholder="mm/dd/yyyy">
+                                </div>
+                        </form>
+                    </div>
+                    <div class="modal-budget-footer">
+                        <button type="button" class="modal-budget-closeBtn">Close</button>
+                        <button type="button" class="modal-budget-saveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
                 </div>
                 <!-- end parent tile #1 -->
 
@@ -141,44 +176,7 @@
             <h2>❤️ Made with love by Team Nine</h2>
         </footer>
 
-        <!-- Budget Modal -->
-        <div id="modal-budget" class="modal-budget-hidden">
-                <div class="modal-budget-dialog">
-                    <div class="modal-budget-content">
 
-                        <div class="modal-budget-header">
-                            <button class="modal-budget-closeModal" type="button">
-                                <span>&times;</span>
-                            </button>
-                            <h5 class="modal-budget-title">Calculate Your Budget</h5>
-                        </div>
-                        <div class="modal-budget-body">
-                            <form>
-                                <div class="modal-budget-form">
-                                        <label for="modal-budget-NumberOfTraveler">Number of Traveler/s:</label>
-                                        <input class="modal-budget-NumberOfTraveler" type="number" placeholder="2">
-                                    </div>
-                                <div class="modal-budget-form">
-                                        <label for="modal-budget-eachTraveler">Estimated Cost Per Traveler:</label>
-                                        <input class="modal-budget-eachTraveler" type="number" placeholder="888">
-                                    </div>
-                                <div class="modal-budget-form">
-                                        <label for="modal-budget-unexpectedCost">Allowable Unexpected Costs:</label>
-                                        <input class="modal-budget-unexpectedCost" type="number" placeholder="200">
-                                    </div>
-                                <div class="modal-budget-form">
-                                        <label for="modal-budget-departureDate">Departure Date:</label>
-                                        <input class="modal-budget-departureDate" type="text" placeholder="mm/dd/yyyy">
-                                    </div>
-                            </form>
-                        </div>
-                        <div class="modal-budget-footer">
-                            <button type="button" class="modal-budget-closeBtn">Close</button>
-                            <button type="button" class="modal-budget-saveBtn">Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div> 
 
         <!-- Jquery files -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

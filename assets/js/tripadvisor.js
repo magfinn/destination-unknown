@@ -75,19 +75,6 @@ var getEvents = function() {
         console.log(data);
         displayEvents(data);
     });
+    
 };
 
-// searchBtn.on('click', function(event) {
-//     console.log("click");
-//     event.preventDefault();
-
-//     // var cityName = cityInputName.val().trim();
-//     // console.log(cityName);
-
-//     localStorage.setItem('city', JSON.stringify(cityName));
-//     if(cityName) {
-//         getEvents();
-//         } else {
-//             return;
-//         };
-// });

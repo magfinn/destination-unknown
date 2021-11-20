@@ -45,7 +45,7 @@ header h1 {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 20vw;
+    /* height: 20vw; */
     margin-bottom: 20px; 
 }
 .jumbotron form {
@@ -81,6 +81,11 @@ header h1 {
     cursor: pointer;
 }
 /* jumbotron styles end */
+
+/* hide api sections until city is input*/
+#api-sections {
+    display: none;
+}
 
 /* MAPS styles start */
 /* #maps{
@@ -342,6 +347,7 @@ a {
 /* Spotify styles start */
 #spotify {
     justify-content: space-between;
+    margin-bottom: 50px;
 }
 /* Spotify styles END */
 

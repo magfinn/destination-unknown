@@ -99,6 +99,7 @@ modalSaveBtn.on("click",function() {
 var searchBtn = $(".city-searchBtn");
 var cityInputName = $(".where-to");
 var todayWeather = $(".current-weather");
+var apiSections = $("#api-sections");
 
 // current day variable
 currentDay = moment().format("MM[/]DD[/]YYYY");
@@ -122,6 +123,7 @@ searchBtn.on("click", function(event) {
     if (cityName) {
         getWeatherData(cityName);
         getEvents();
+        apiSections.show();
         //clear old content
         cityInputName.val('');
     } else {
