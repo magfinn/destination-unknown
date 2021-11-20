@@ -6,7 +6,10 @@
     --white-color: #F7F9FB;
     --green-color: #687864;
   }
-
+.tile {
+    margin: 3%;
+    background-color: var(--secondary-color);
+}
 body {
     background-color: var(--white-color) ;
     font-family: Helvetica, Arial, sans-serif;
@@ -15,25 +18,14 @@ body {
 }
 
 header {
-    background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
-    background-color: var(--secondary-color);
-    border-radius: 30px;
-    
+    border-radius: 30px;  
 }
-/* H1 styles start */
-.rt-bg {
-    background-size: cover;
-    background-position: center;
-    background-position: 80%;
-    border-radius: 30px;
-    height: 100px;
-    transition: transform .7s ease-in-out;
-}
+
 header h1 {
     font-weight: bold;
     font-size: 10vh;
@@ -43,47 +35,9 @@ header h1 {
 .opac {
     opacity: 40%;
 }
-/* H1 styles end */
-
-/* navigation styles start */
-header nav {
-    flex: 70%;
-    justify-content: space-around;
-   }
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    padding: 5;
-}
-header nav ul li a {
-    padding: 15px;
-    color: var(--primary-color);
-    /* font-weight: bold; */
-    font-size: 1.75vw;
-    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-    text-decoration: none;
-}
-header nav ul li a:hover {
-    /* background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, 
-    #2BD2FF 52%, #2BFF88 90%); */
-    transition: all .4s ease-in-out;
-    /*background-color: var(--tertiary-color);*/
-    color: var(--tertiary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-}
-header nav ul li {
-    transition: transform .5s ease-in-out;
-}
-/* navigation styles end */
 
 /* jumbotron styles start */
-.jumbotron {
+.hero {
     background-image: url("../images/rt-01.jpg");
     background-size: cover;
     background-position: bottom;
@@ -92,8 +46,7 @@ header nav ul li {
     flex-wrap: wrap;
     align-items: center;
     height: 20vw;
-    border-radius: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
 }
 .jumbotron form {
     background-color: white;
@@ -107,7 +60,7 @@ header nav ul li {
     font-size: 3vw;
     padding-left: 20px;
     border:none;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .where-to::placeholder {
     font-size: 2.5vw;
@@ -130,20 +83,18 @@ header nav ul li {
 /* jumbotron styles end */
 
 /* MAPS styles start */
-#maps{
+/* #maps{
     width: 65%;
     background-color: var(--secondary-color);
     flex: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* border-radius: 30px; */
-}
-#maps h4 {
+    border-radius: 30px;
+} */
+h4 {
     flex: 100%;
     margin: 0 0 15px 0;
-}
-#maps h4 {
     color: var(--primary-color);
     border: solid 3px var(--green-color);
     border-radius: 30px;
@@ -153,7 +104,7 @@ header nav ul li {
     margin-bottom: 0;
     height: 4vw;
 }
-#maps h4:hover{
+h4:hover{
     -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
     -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
     box-shadow: 8px 15px 0px var(--tertiary-color);
@@ -163,37 +114,10 @@ header nav ul li {
 
 /* WEATHER styles start */
 #weather{
-    flex: 50%;
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--tertiary-color) 0%,  */
-    /* var(--secondary-color) 52%, var(--green-color) 90%); */
-    flex: 50%;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    border-radius: 30px;
+    margin-bottom: 10%;
 }
-#weather h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#weather h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#weather h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
-    box-shadow: 8px 15px 0px var(--secondary-color);
-    transition: all 500ms ease;
-}
+
 #weather span {
     margin: 15px 0;
 }
@@ -219,87 +143,37 @@ header nav ul li {
 
 /* Tripadvisorstyles start */
 #tripadvisor{
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    flex: 50%;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    /* border-radius: 30px; */
-    border-radius: 30px;
-    margin-bottom: 25px;
-}
-#tripadvisor h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#tripadvisor h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#tripadvisor h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
-    box-shadow: 8px 15px 0px var(--secondary-color);
-    transition: all 500ms ease;
-}
-#tripadvisor .event-container {
-   width: 100%;
-   border-radius: 20px;
-   border: 1 px solid darkslategray;
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: row;
-}
-.event-container{
-    display: flex;
-    flex: wrap row;
     align-content: center;
-    justify-content: space-between;
-    margin:1%;
+    background-color: var(--secondary-color);
 }
+
+/* .event-tile {
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    width: 20%;
+    padding: 2%;
+    margin: 1%;
+    hover:
+}
+.event-tile:hover {
+    opacity: 30%;
+} */
+
+/* .event-title {
+    color: var(--secondary-color);
+    font: bold large;
+} */
+
 a {
     text-decoration:none;
 }
 /* Tripadviser styles END */
 
-/* body divs styles start */
-.container1 .container2 .container3 {
-    display: flex;
-    justify-content: space-around;
-    padding:5px;
-    margin-bottom: 20px;
-    width: 60%;
-}
-div {
-    margin: 5px;
-}
-.container4 {
-    display: flex;
-    justify-content: right;
-    width: 40%;
-}
-/* body divs styles end */
 
 /* Budget-modal Styles start */
 #budget {
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    flex:50%;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: 30px;
 }
 #budget h4,
 .budget-callMessage,
@@ -307,22 +181,6 @@ div {
 .budget-calculateDetails {
     flex: 100%;
     margin: 0 0 15px 0;
-}
-#budget h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#budget h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
-    box-shadow: 8px 15px 0px var(--secondary-color);
-    transition: all 500ms ease;
 }
 .budget-callMessage p {
     color: var(--primary-color);
@@ -346,7 +204,6 @@ div {
 .boldText {
     font-weight: bold;
     font-size: 20px;
-
 }
 .budget-calculate {
     text-align: center;
@@ -484,36 +341,7 @@ div {
 
 /* Spotify styles start */
 #spotify {
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    float: right;
-    align-content: flex-end;
-    flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: 30px;
-    margin-right: 15px;
-    padding: 5px;
-}
-#spotify h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#spotify h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#spotify h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--secondary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--secondary-color);
-    box-shadow: 8px 15px 0px var(--secondary-color);
-    transition: all 500ms ease;
 }
 /* Spotify styles END */
 
