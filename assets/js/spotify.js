@@ -1,5 +1,7 @@
 const APIController = (function() {
     $("#back").css('display','none');
+    $("#form").css('display','flex');
+
     
     const clientId = '51e024a2658f4e14871696389e01d29d';
     const clientSecret = '182cbc420d1c4785b239492ab1dede74';
@@ -169,7 +171,7 @@ const APPController = (function(UICtrl, APICtrl) {
 
     // Go back button to show form again
     $("#back").on('click',function(){
-        $("#form").css('display','block');
+        $("#form").css('display','flex');
         $("#back").css('display','none');
         $("#song-detail").css('display','none');
     });
@@ -228,9 +230,9 @@ const APPController = (function(UICtrl, APICtrl) {
     // create song selection click event listener
     DOMInputs.tracks.addEventListener('click', async (e) => {        
         $("#song-list-hide").css('display','none');
-        $("#back").css('display','block');
+        $("#back").css('display','flex');
         $("#title").text("Go back to discover more...");
-        $("#song-detail").css('display','block');
+        $("#song-detail").css('display','flex');
 
         // Prevent page reset
         e.preventDefault();
