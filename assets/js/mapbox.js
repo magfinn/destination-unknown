@@ -201,6 +201,7 @@ var MapboxDirections = function (){
     }
 });
 }
+  }
 
 _clickHandler=function() {
 var timer = null;
@@ -258,7 +259,7 @@ features.forEach((f) => {
 }
 }
 
-_move(e) {
+_move(e) {;
 const { hoverMarker } = store.getState();
 
 const features = this._map.queryRenderedFeatures(e.point, {
