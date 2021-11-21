@@ -4,13 +4,19 @@
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <title>Destination Unknown</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma-rtl.css" integrity="sha512-lRrLGKpDJnz2o4GiW8kQ+5ugePN6VGOquzU+nLqJaYPJ3XBk2FXldC+EhHBJVKuO93Ac4sEua9g+VMfWtNcI4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma-rtl.min.css" integrity="sha512-Yb3erqU+mk7RBdOFQXcE9QbdHnFXg/jUFqTLmKXQX3MdUD3JLhr+6SB8hqNbZqiGfXFQCSdw0tccmQSJGLWkCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"> -->
+    <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma-rtl.min.css" integrity="sha512-Yb3erqU+mk7RBdOFQXcE9QbdHnFXg/jUFqTLmKXQX3MdUD3JLhr+6SB8hqNbZqiGfXFQCSdw0tccmQSJGLWkCA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.css" integrity="sha512-7VGuxKU1BFMmA+dC7NiW8jF0YOIe6bibjUBr42unVtEsI/UYzXMS3nkgNvmsY4yqauxeiEs4bXF6fPLsCuxN/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="./assets/css/style.css" />
-   <title>RoadTrip</title>
+
+   <!-- mapBox    -->
+   <script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
+   <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
    </head>
 
    <body>
@@ -26,7 +32,7 @@
                             <div class="navbar-item has-dropdown is-hoverable is-large">
                                 <a class="navbar-link" href="#">Get Started</a>
                                 <div class="navbar-dropdown is-boxed">
-                                    <a href="#maps" class="navbar-item">Get There</a>
+                                    <!-- <a href="#maps" class="navbar-item">Get There</a> -->
                                     <a href="#weather" class="navbar-item">Plan Ahead</a>
                                     <a href="#tripadvisor" class="navbar-item">Book an Event</a>
                                     <a href="#budget" class="navbar-item">Budget It</a>
@@ -59,10 +65,20 @@
                 <!-- Parent Tile #1 (holds maps, events & budget) -->
                 <div class="tile is-parent is-vertical is-8">
 
-                    <!-- Maps - Santiago -->
+                    <!-- Maps - Santiago
                     <div class="tile is-child" id="maps">
-                        <h4>Get There</h4>
-                    </div>
+                        <div class="card is-centered">
+                            <div class="card-body">
+                                <h4 class="card-title">Get There</h4>
+                                <div id="map"></div>
+                            </div>
+                            <div class="card" style="width: 21.5rem;">
+                                <div class="card-body">
+                                    <div id='directions' class='directions'></div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> -->
                     
                     <!-- Budget - Khanh -->
                     <div class="tile is-child" id="budget">
@@ -116,6 +132,15 @@
                         </div>
                     </div> 
                     <!-- end budget modal -->
+                    
+                    <!-- Events - Maggie -->
+                    <div class="tile is-child" id="tripadvisor">
+                        <h4>Events</h4>
+                        <div id="event-container" class="card is-parent">
+                        </div>
+                        <a target="_blank" href="http://www.ticketmaster.com"><button class="button is-rounded is-large is-fullwidth" type="submit" id="ticketmaster-url-btn">Search for more events</button></a>
+                    </div>
+                    <!-- event events section -->
                 </div>
                 <!-- end parent tile #1 -->
 
@@ -130,9 +155,9 @@
                         </div>
                     </div>
 
-                     <!-- Spotify - Ana -->
-                     <div class="tile is-child" id="spotify">
-                        <h4>Playlist</h4>
+                    <!-- Spotify - Ana -->
+                    <div class="tile is-child" id="spotify">
+                        <h4>Playlists</h4>
                         <form action="" id="form">
                             <input type="hidden" id='hidden_token'>
                             <div class="selector tile is-child">
@@ -160,15 +185,6 @@
                         </div>
                     </div>
                     <!-- end spotify -->
-
-                     <!-- Events - Maggie -->
-                     <div class="tile is-child" id="tripadvisor">
-                        <h4>Events</h4>
-                        <div id="event-container" class="card is-parent">
-                        </div>
-                        <a target="_blank" href="http://www.ticketmaster.com"><button class="button is-rounded is-large is-fullwidth" type="submit" id="ticketmaster-url-btn">Search for more events</button></a>
-                    </div>
-                    <!-- event events section -->
                 </div>
                 <!-- end parent tile #2 -->
             </div>
