@@ -11,7 +11,7 @@
 
 ## Description
 
-This project consisted on creating an interactive website to help people plan a road trip. Once the user provides a city they want to visit, the website will include information on Maps/Routes, events, current weather, and songs to sing along on the way. This website will run in the browser and feature dynamically updated HTML and CSS. This site takes all the variables of planning a trip and puts it in one easy to access place that can be shared among your group. This website will include 4 server-side APIs. 
+This project consisted on creating an interactive website to help people plan a road trip. Once the user provides a city they want to visit, the website will include information on events, current weather, and songs to sing along on the way. This website will run in the browser and feature dynamically updated HTML and CSS. This site takes all the variables of planning a trip and puts it in one easy to access place that can be shared among your group. This website will include 4 server-side APIs. 
 
 ## Snippets 
 
