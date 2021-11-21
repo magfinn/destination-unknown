@@ -26,6 +26,7 @@ var displayEvents = function(data) {
             var eventDate = document.createElement('p');
             var eventURL = document.createElement('p');
 
+
             //TODO: fit images to events or take out
             // var eventImg=currentEvent.images[4].url;
             // console.log(eventImg);
@@ -49,14 +50,15 @@ var displayEvents = function(data) {
             eventContainer.append(eventDiv);
 
             //add classes to DOM elements
-            eventDiv.setAttribute("style", "border-radius:30px; background-color: var(--primary-color); padding: 1%; margin: 1%; align-items: center;");
+            eventDiv.setAttribute("style", "border-radius:30px; background-color: var(--primary-color); padding: 3%; margin: 1%; align-items: center;");
             eventDate.setAttribute("style", "color: var(--secondary-color); text-align: center;");
-            eventName.setAttribute("style", "color: var(--secondary-color); font weight: bolder; font-size: 2.5vh; text-align:center;");
+            eventName.setAttribute("style", "color: var(--secondary-color); font weight: bolder; font-size: 2vh; text-align:center;");
             eventURL.setAttribute("style", "text-decoration: none; color: var(--secondary-color); text-align: center; font-size: 2vh");
 
             //go to the next event
             count++;
     });
+
 };
 
 

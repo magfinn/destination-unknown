@@ -18,7 +18,7 @@
             <nav class="navbar is-transparent">
                 <div class="navbar-brand">
                     <a class="nav-bar item" href="#">
-                        <h1 class="rt-bg">Destination <span class="opac">Un</span>known</h1>
+                        <h1 class="navbar-brand">Destination <span class="opac">Un</span>known</h1>
                     </a>
                 </div>
                 <div id="navbarTransparent" class="navbar-menu">
@@ -26,7 +26,7 @@
                             <div class="navbar-item has-dropdown is-hoverable is-large">
                                 <a class="navbar-link" href="#">Get Started</a>
                                 <div class="navbar-dropdown is-boxed">
-                                    <a href="#map" class="navbar-item">Get There</a>
+                                    <a href="#maps" class="navbar-item">Get There</a>
                                     <a href="#weather" class="navbar-item">Plan Ahead</a>
                                     <a href="#tripadvisor" class="navbar-item">Book an Event</a>
                                     <a href="#budget" class="navbar-item">Budget It</a>
@@ -41,7 +41,7 @@
 
         <section class="hero is-large">
             <div class="hero-body">
-                <form>
+                <form id="hero-form">
                     <button type="submit" class="city-searchBtn button is-rounded is-hovered">
                         <img src="./assets/images/search.png">
                     </button>
@@ -77,44 +77,45 @@
                         </div>
                     </div>
                     <!-- end budget -->
-                           <!-- Budget Modal -->
-        <div id="modal-budget" class="modal-budget-hidden">
-            <div class="modal-budget-dialog">
-                <div class="modal-budget-content">
 
-                    <div class="modal-budget-header">
-                        <button class="modal-budget-closeModal" type="button">
-                            <span>&times;</span>
-                        </button>
-                        <h5 class="modal-budget-title">Calculate Your Budget</h5>
-                    </div>
-                    <div class="modal-budget-body">
-                        <form>
-                            <div class="modal-budget-form">
-                                    <label for="modal-budget-NumberOfTraveler">Number of Traveler/s:</label>
-                                    <input class="modal-budget-NumberOfTraveler" type="number" placeholder="2">
+                    <!-- Budget Modal -->
+                    <div id="modal-budget" class="modal-budget-hidden">
+                        <div class="modal-budget-dialog">
+                            <div class="modal-budget-content">
+                                <div class="modal-budget-header">
+                                    <button class="modal-budget-closeModal" type="button">
+                                        <span>&times;</span>
+                                    </button>
+                                    <h5 class="modal-budget-title">Calculate Your Budget</h5>
                                 </div>
-                            <div class="modal-budget-form">
-                                    <label for="modal-budget-eachTraveler">Estimated Cost Per Traveler:</label>
-                                    <input class="modal-budget-eachTraveler" type="number" placeholder="888">
+                                <div class="modal-budget-body">
+                                    <form>
+                                    <div class="modal-budget-form">
+                                        <label for="modal-budget-NumberOfTraveler">Number of Traveler/s:</label>
+                                            <input class="modal-budget-NumberOfTraveler" type="number" placeholder="2">
+                                    </div>
+                                    <div class="modal-budget-form">
+                                        <label for="modal-budget-eachTraveler">Estimated Cost Per Traveler:</label>
+                                            <input class="modal-budget-eachTraveler" type="number" placeholder="888">
+                                    </div>
+                                    <div class="modal-budget-form">
+                                        <label for="modal-budget-unexpectedCost">Allowable Unexpected Costs:</label>
+                                            <input class="modal-budget-unexpectedCost" type="number" placeholder="200">
+                                    </div>
+                                    <div class="modal-budget-form">
+                                        <label for="modal-budget-departureDate">Departure Date:</label>
+                                            <input class="modal-budget-departureDate" type="text" placeholder="mm/dd/yyyy">
+                                            </div>
+                                    </form>
                                 </div>
-                            <div class="modal-budget-form">
-                                    <label for="modal-budget-unexpectedCost">Allowable Unexpected Costs:</label>
-                                    <input class="modal-budget-unexpectedCost" type="number" placeholder="200">
+                                <div class="modal-budget-footer">
+                                    <button type="button" class="modal-budget-closeBtn">Close</button>
+                                    <button type="button" class="modal-budget-saveBtn">Save</button>
                                 </div>
-                            <div class="modal-budget-form">
-                                    <label for="modal-budget-departureDate">Departure Date:</label>
-                                    <input class="modal-budget-departureDate" type="text" placeholder="mm/dd/yyyy">
-                                </div>
-                        </form>
-                    </div>
-                    <div class="modal-budget-footer">
-                        <button type="button" class="modal-budget-closeBtn">Close</button>
-                        <button type="button" class="modal-budget-saveBtn">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div> 
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- end budget modal -->
                 </div>
                 <!-- end parent tile #1 -->
 
@@ -129,14 +130,8 @@
                         </div>
                     </div>
 
-                     <!-- Events - Maggie -->
-                     <div class="tile is-child" id="tripadvisor">
-                        <h4>Events</h4>
-                        <div id="event-container" class="card is-parent"></div>
-                    </div>
-
-                    <!-- Spotify - Ana -->
-                    <div class="tile is-child" id="spotify">
+                     <!-- Spotify - Ana -->
+                     <div class="tile is-child" id="spotify">
                         <h4>Playlist</h4>
                         <form action="" id="form">
                             <input type="hidden" id='hidden_token'>
@@ -150,14 +145,14 @@
                                 <label for="Genre">Playlists:</label>
                                 <select name="" id="select_playlist">
                                     <option>Select...</option>                    
-                                /select>
+                                </select>
                             </div>                  
                             <div class="selector">
                                 <button type="submit" id="btn_submit">Search</button>
                             </div>          
                         </form>        
                         <div class="row" id="row">
-                            <div class="song-list" id="song-list-hide"></div>                                        
+                            <div class="song-list" id="song-list-hide"></div>                                    
                             <div id="song-detail"></div>
                             <div class="selector">
                                 <button type="button" id="back">Go Back</button>
@@ -165,15 +160,29 @@
                         </div>
                     </div>
                     <!-- end spotify -->
+
+                     <!-- Events - Maggie -->
+                     <div class="tile is-child" id="tripadvisor">
+                        <h4>Events</h4>
+                        <div id="event-container" class="card is-parent">
+                        </div>
+                        <a target="_blank" href="http://www.ticketmaster.com"><button class="button is-rounded is-large is-fullwidth" type="submit" id="ticketmaster-url-btn">Search for more events</button></a>
+                    </div>
+                    <!-- event events section -->
                 </div>
                 <!-- end parent tile #2 -->
             </div>
-            <!-- end tile ancestor (holds events, budget, weather & spotify) -->
+            <!-- end tile ancestor -->
         </section>
         <!-- end section with all 5 tiles -->
    
         <footer>
-            <h2>❤️ Made with love by Team Nine</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="subtitle">&hearts; Made with love by Team Nine </p>
         </footer>
 
 
