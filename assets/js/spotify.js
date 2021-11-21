@@ -171,6 +171,8 @@ const APPController = (function(UICtrl, APICtrl) {
 
     // Go back button to show form again
     $("#back").on('click',function(){
+        $("#title").css('height','4vw');
+        $("#title").text("Playlist...");
         $("#form").css('display','flex');
         $("#back").css('display','none');
         $("#song-detail").css('display','none');
@@ -231,8 +233,9 @@ const APPController = (function(UICtrl, APICtrl) {
     DOMInputs.tracks.addEventListener('click', async (e) => {        
         $("#song-list-hide").css('display','none');
         $("#back").css('display','flex');
+        $("#title").css('display','flex');
         $("#title").text("Go back to discover more...");
-        $("#song-detail").css('display','flex');
+        $("#title").css('height','140px');
 
         // Prevent page reset
         e.preventDefault();
