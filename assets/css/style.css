@@ -84,7 +84,7 @@ header h1 {
 body {
     background-color: var(--white-color) ;
     font-family: Helvetica, Arial, sans-serif;
-    color: dark
+    color: dark;
 }
 /* hide api sections until city is input*/
 #api-sections {
@@ -347,6 +347,11 @@ a {
     justify-content: space-between;
     margin-bottom: 50px;
 }
+
+#spotify a{
+    color:rgba(0, 0, 0, 0.5);
+}
+
 /* Spotify styles END */
 
 /* Footer Start */
