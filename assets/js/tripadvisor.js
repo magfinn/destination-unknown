@@ -10,13 +10,13 @@ var displayEvents = function(data) {
     eventContainer.empty();
     //create elements that make up an event item
     var events = data._embedded.events;
-    console.log(events);
+    // console.log(events);
     count=0
 
     // for each event, create elements and display name, date, link to purchase tickets and image
         events.forEach(event => {
             //shows each event
-            console.log(events[count]);
+            // console.log(events[count]);
             //create variable for each event
             var currentEvent=events[count];
             //create elements
@@ -66,15 +66,15 @@ var displayEvents = function(data) {
 var getEvents = function() {
     // var city = localStorage.getItem('cityName');
     var cityName = cityInputName.val().trim();
-    console.log(cityName);
-    console.log('city: ', cityName);
+    // console.log(cityName);
+    // console.log('city: ', cityName);
     
     fetch(tmRootURL + cityName +'&page=1&size=5&apikey=' + APIKey)
 
     .then(response =>
         response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         displayEvents(data);
     });
     
