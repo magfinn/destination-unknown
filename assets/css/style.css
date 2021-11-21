@@ -1,42 +1,19 @@
 :root {
-    /* --primary-color: #31708E; */
     --primary-color: #2f4f4f;
     --secondary-color: whitesmoke;
     --tertiary-color: #acbcc5;
     --white-color: #F7F9FB;
     --green-color: #687864;
-  }
-
-body {
-    background-color: var(--white-color) ;
-    font-family: Helvetica, Arial, sans-serif;
-    /* color: dark; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /* margin: 0 75px; */
 }
 
+/* Header & Nav */
 header {
-    flex: 100%;
-    background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
-    background-color: var(--secondary-color);
-    border-radius: 30px;
-    
-}
-/* H1 styles start */
-.rt-bg {
-    background-size: cover;
-    background-position: center;
-    background-position: 80%;
-    border-radius: 30px;
-    height: 100px;
-    transition: transform .7s ease-in-out;
+    border-radius: 30px;  
 }
 header h1 {
     font-weight: bold;
@@ -47,49 +24,17 @@ header h1 {
 .opac {
     opacity: 40%;
 }
-/* H1 styles end */
 
-/* navigation styles start */
-header nav {
-    flex: 70%;
-    justify-content: space-around;
-    margin: 10px 50px;
-   }
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    padding: 5;
+.navbar-item,
+.navbar-menu {
+    font-weight: bolder;
 }
-header nav ul li a {
-    padding: 15px;
-    color: var(--primary-color);
-    /* font-weight: bold; */
-    font-size: 1.75vw;
-    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-    text-decoration: none;
-}
-header nav ul li a:hover {
-    /* background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, 
-    #2BD2FF 52%, #2BFF88 90%); */
-    transition: all .4s ease-in-out;
-    /*background-color: var(--tertiary-color);*/
-    color: var(--tertiary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-}
-header nav ul li {
-    transition: transform .5s ease-in-out;
-}
-/* navigation styles end */
 
-/* jumbotron styles start */
-.jumbotron {
-    flex: 100%;
+.navbar-item:hover {
+    background-color: rgb(228, 234, 235);
+}
+
+.hero {
     background-image: url("../images/rt-01.jpg");
     background-size: cover;
     background-position: bottom;
@@ -97,13 +42,13 @@ header nav ul li {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 20vw;
-    border-radius: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 20px; 
 }
 .jumbotron form {
     background-color: white;
     border-radius: 40px;
+    align-items: center;
+    justify-content: center;
 }
 .where-to {
     flex: 40%;
@@ -113,12 +58,10 @@ header nav ul li {
     font-size: 3vw;
     padding-left: 20px;
     border:none;
-    margin-bottom: 20px;
 }
 .where-to::placeholder {
     font-size: 2.5vw;
     padding-left: 10px;
-    
 }
 .city-searchBtn {
     height: 4vw;
@@ -126,46 +69,31 @@ header nav ul li {
     padding-left: 40px;
     border:none;
     background-color: white;
-    margin-top: 20px;
 }
 .city-searchBtn img {
     height: 2vw;
     width: 2vw;
     cursor: pointer;
 }
-/* jumbotron styles end */
 
-/* body divs styles start */
-.container1,
-.container2,
-.container3,
-.container4 {
-    flex: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-radius: 30px;
-    margin: 25px 150px 25px 150px;
-}
-/* body divs styles end */
-
-/* MAPS styles start */
-#maps {
-    flex: 100%;
-    /* width: 65%; */
+/* Main section of page */
+.tile {
+    margin: 3%;
     background-color: var(--secondary-color);
-    /* flex: 50%; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 25px;
-    /* border-radius: 30px; */
 }
-#maps h4 {
+body {
+    background-color: var(--white-color) ;
+    font-family: Helvetica, Arial, sans-serif;
+    color: dark
+}
+/* hide api sections until city is input*/
+#api-sections {
+    display: none;
+}
+/* section headings */
+h4 {
     flex: 100%;
     margin: 0 0 15px 0;
-}
-#maps h4 {
     color: var(--primary-color);
     border: solid 3px var(--green-color);
     border-radius: 30px;
@@ -175,56 +103,34 @@ header nav ul li {
     margin-bottom: 0;
     height: 4vw;
 }
-#maps h4:hover{
+h4:hover{
     -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
     -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
     box-shadow: 8px 15px 0px var(--tertiary-color);
     transition: all 500ms ease;
 }
-.maps iframe {
-    text-align: center;
-}
+
+/* MAPS styles start */
+/* #maps{
+    width: 65%;
+    background-color: var(--secondary-color);
+    flex: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 30px;
+} */
 /* MAPS styles END */
 
 /* WEATHER styles start */
-#weather {
-    flex: 100%;
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--tertiary-color) 0%,  */
-    /* var(--secondary-color) 52%, var(--green-color) 90%); */
-    display: flex;
-    flex-wrap: wrap;
+#weather{
     justify-content: center;
-    border-radius: 30px;
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-#weather h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#weather h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#weather h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
+    margin-bottom: 10%;
 }
 #weather span {
     margin: 15px 0;
 }
 .current-weather {
-    flex:100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -242,86 +148,35 @@ header nav ul li {
     margin:0;
     padding:0;
 }
-.badge-success {
-    background-color: green;
-    color: white;
-}
-.badge-warning{
-    background-color: orange;
-    color: white;
-}
-.badge-danger {
-    background-color: red;
-    color: white;
-}
 /* WEATHER styles END */
 
 /* Tripadvisorstyles start */
-#tripadvisor {
-    flex: 100%;
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    /* flex: 50%; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 30px;
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-#tripadvisor h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#tripadvisor h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#tripadvisor h4:hover{
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
-}
-#tripadvisor .event-container {
-   width: 100%;
-   border-radius: 20px;
-   border: 1 px solid darkslategray;
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: row;
-}
-.event-container {
-    display: flex;
-    flex-wrap: row;
-    align-content: center;
+#tripadvisor{
     justify-content: space-between;
-    margin:1%;
+    align-content: center;
+    background-color: var(--secondary-color);
+    align-items: center;
+}
+#ticketmaster-url-btn:hover {
+    background-color: var(--primary-color);
+    opacity: 20%;
+    color: whitesmoke;
 }
 a {
     text-decoration:none;
+    color: whitesmoke;
+}
+#event-container a:hover {
+    background-color:rgb(228, 234, 235);
+    color: var(--primary-color);
+    border: 1px solid;
 }
 /* Tripadviser styles END */
 
+
 /* Budget-modal Styles start */
 #budget {
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    flex:50%;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: 30px;
 }
 #budget h4,
 .budget-callMessage,
@@ -329,22 +184,6 @@ a {
 .budget-calculateDetails {
     flex: 100%;
     margin: 0 0 15px 0;
-}
-#budget h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#budget h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
 }
 .budget-callMessage p {
     color: var(--primary-color);
@@ -368,7 +207,6 @@ a {
 .boldText {
     font-weight: bold;
     font-size: 20px;
-
 }
 .budget-calculate {
     text-align: center;
@@ -506,89 +344,43 @@ a {
 
 /* Spotify styles start */
 #spotify {
-    flex: 100%;
-    width: 65%;
-    background-color: var(--secondary-color);
-    /* background-image: linear-gradient(45deg, var(--secondary-color) 0%, 
-    var(--secondary-color) 52%, var(--green-color) 90%); */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 30px;
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-#spotify h4 {
-    flex: 100%;
-    margin: 0 0 15px 0;
-}
-#spotify h4 {
-    color: var(--primary-color);
-    border: solid 3px var(--primary-color);
-    border-radius: 30px;
-    font-size: 2.5vw;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vw;
-}
-#spotify h4:hover {
-    -moz-box-shadow: 8px 15px 0px var(--tertiary-color);
-    -webkit-box-shadow: 8px 15px 0px var(--tertiary-color);
-    box-shadow: 8px 15px 0px var(--tertiary-color);
-    transition: all 500ms ease;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
 /* Spotify styles END */
 
 /* Footer Start */
-    footer {
-        flex:100%;
-        text-align: center;
-        color: var(--white-color);
-        background-color: var(--primary-color);
-        font-size: 0.7vw;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        margin:0;
-    }
+footer {
+    padding: 15px;
+    color: var(--primary-color);
+    background-color: rgb(228, 234, 235);
+    font-size: 0.5vw;
+    font-weight: bolder;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 /* Footer Style END */
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 1010px) {
-   .rt-bg {
+   .navbar {
         flex: 100%;
         background-image: none;
-        height: 100px;
-        transition: all .5s ease-out;
     }
    
-    header div h1 br {
-        display: none;
-    }
-    .rt-bg h1 {
-        color: white;
+    .navbar h1 {
         text-align: center;
-        font-size: 55px;
+        font-size: 20pt;
         text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
-    
+    .hero {
+        height: 100%;
+    }
     header nav {
         flex: 100%;
         align-items: center;
         margin: 0 35px;
     }
-
-    header nav ul li a {
-        font-size: 25px;
-        font-weight: bold;
+    footer {
+        display: none;
     }
-    header nav ul li a:hover {
-        font-size: 30px;
-    }
-
-    .jumbotron {
-        background-image: url("../images/rt-02.jpg");
-        background-size: cover;
-        background-position: 0 -350px;
-        transition: all .5s ease-out;
-    }
-}
+};
