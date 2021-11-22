@@ -82,9 +82,9 @@ This is a preview of Destination Unknown on smaller screens.
 
 ## Links
 
-* [URL of the deployed application](https://khanhlam90.github.io/first-project/)
+* [URL of the deployed application](https://khanhlam90.github.io/destination-unknown/)
 
-* [URL of the GitHub repository](https://github.com/khanhlam90/first-project)
+* [URL of the GitHub repository](https://github.com/khanhlam90/destination-unknown.git)
 
 ## Contributors
 
