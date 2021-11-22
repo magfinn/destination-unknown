@@ -232,6 +232,7 @@ const APPController = (function(UICtrl, APICtrl) {
     // create song selection click event listener
     DOMInputs.tracks.addEventListener('click', async (e) => {        
         $("#song-list-hide").css('display','none');
+        $("#song-detail").css('display','flex');
         $("#back").css('display','flex');
         $("#title").css('display','flex');
         $("#title").text("Go back to discover more...");
